@@ -65,7 +65,11 @@ export const CardTitle = styled.h3`
   font-size: 40px;
   margin-bottom: -10px;
 `;
-export const CardDescription = styled.div``;
+export const CardDescription = styled.div`
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+`;
 export const CardFooter = styled.div`
   height: 85px;
   display: flex;
