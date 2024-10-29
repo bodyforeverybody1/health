@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { ModalContext } from "./index";
 
 interface ModalProviderProps {
@@ -21,6 +21,13 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
   const value = { isOpen, openModal, closeModal, type };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
     <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
   );
