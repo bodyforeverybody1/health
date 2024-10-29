@@ -1,3 +1,5 @@
+export const token = "7755522418:AAHlrAd4AGS12imeJq-9PdZBVZLk86S8pOw";
+
 interface IAboutText {
   titleFirst: string;
   titleSecond: string;

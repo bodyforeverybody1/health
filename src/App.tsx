@@ -10,19 +10,23 @@ import { AppWrapper } from "./styled.root.ts";
 import Consultation from "./sections/Consultation";
 import Video from "./sections/Video";
 import Result from "./sections/Result";
+import Modal from "./components/Modal";
 
 function App() {
   return (
-    <AppWrapper>
-      <Header />
-      <Rate />
-      <About />
-      <Consultation />
-      <Result />
-      <Faq />
-      <Video />
-      <Footer />
-    </AppWrapper>
+    <>
+      <Modal />
+      <AppWrapper>
+        <Header />
+        <Rate />
+        <About />
+        <Consultation />
+        <Result />
+        <Faq />
+        <Video />
+        <Footer />
+      </AppWrapper>
+    </>
   );
 }
 

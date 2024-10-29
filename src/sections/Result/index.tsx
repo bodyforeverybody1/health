@@ -3,7 +3,7 @@ import { Card, ImageWrapper, Title, Description, TitleSection } from "./styled";
 
 const Result = () => {
   return (
-    <section>
+    <section id="result">
       <Container>
         <div>
           <TitleSection>Результаты</TitleSection>

@@ -21,7 +21,7 @@ const Faq = () => {
     }
   };
   return (
-    <section>
+    <section id="faq">
       <Container>
         <Title>FAQ</Title>
         <div>
@@ -36,7 +36,7 @@ const Faq = () => {
                   </PlusBtn>
                 </WrapperLine>
 
-                <Description isShow={activeIndex === index}>
+                <Description isshow={activeIndex === index}>
                   {el.description}
                 </Description>
               </MainLine>

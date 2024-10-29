@@ -22,10 +22,13 @@ export const Button = styled.button`
   background: rgba(255, 190, 11, 1);
   font-size: 1.1vw;
   padding: 30px 150px;
+  position: relative;
+  z-index: 5;
   text-transform: uppercase;
   font-weight: bold;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     display: none;
@@ -88,6 +91,7 @@ export const MobileButton = styled.button`
   height: 60px;
   position: relative;
   top: -6vw;
+  cursor: pointer;
   @media (min-width: 768px) {
     display: none;
   }

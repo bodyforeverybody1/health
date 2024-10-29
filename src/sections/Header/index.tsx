@@ -18,16 +18,23 @@ import {
 import { Container } from "../../styled.root.ts";
 import IconTelegram from "../../../public/telegram.svg";
 import IconInstagram from "../../../public/insta.svg";
+import { useModal } from "../../hooks/useModal.ts";
 
 const Header = () => {
+  const { openModal } = useModal();
+
+  const handleClick = () => {
+    openModal();
+    console.log("open modal Order");
+  };
   return (
     <Section>
       <Container>
         <Wrapper>
           <Elements>
             <a href="/">Найди себя</a>
-            <a href="/">Результаты</a>
-            <a href="/">FAQ</a>
+            <a href="/#result">Результаты</a>
+            <a href="/#faq">FAQ</a>
           </Elements>
           <FullName>
             <a href="/">ДМИТРИЙ ЗАЙЦЕВ</a>
@@ -74,7 +81,10 @@ const Header = () => {
           </WrapperCircle>
         </Block>
       </BlockWrapper>
-      <ButtonConsult>Бесплатная консультация</ButtonConsult>
+      <ButtonConsult onClick={() => handleClick()}>
+        Бесплатная консультация
+      </ButtonConsult>
+      {/*<button onClick={() => logout()}>Выйти {user}</button>*/}
     </Section>
   );
 };

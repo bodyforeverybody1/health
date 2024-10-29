@@ -9,8 +9,10 @@ import {
   Type,
   CardFooter,
 } from "./styled.ts";
+import { useModal } from "../../hooks/useModal.ts";
 
 const Rate = () => {
+  const { openModal } = useModal();
   return (
     <Container>
       <Title>
@@ -21,7 +23,8 @@ const Rate = () => {
           <Card>
             <CardTitle>Базовый</CardTitle>
             <CardDescription>
-              Ведение по рациону питания/обучение на 1 месяц
+              <div>Ведение по рациону питания/обучение</div>
+              <div> на 1 месяц</div>
             </CardDescription>
             <ul>
               <li>Составление сбалансированного рациона, корректировки</li>
@@ -32,7 +35,7 @@ const Rate = () => {
               <li>Общие рекомендации по активности и образу жизни</li>
             </ul>
             <CardFooter>
-              <button>ОФОРМИТЬ</button>
+              <button onClick={() => openModal("Базовый")}>ОФОРМИТЬ</button>
               <button>$320</button>
             </CardFooter>
           </Card>
@@ -44,7 +47,8 @@ const Rate = () => {
           <Card>
             <CardTitle>Полный</CardTitle>
             <CardDescription>
-              Ведение по фитнесу (полное сопровождение) на 1 месяц
+              <div>Ведение по фитнесу (полное сопровождение)</div>
+              <div>на 1 месяц</div>
             </CardDescription>
             <ul>
               <li>Составление плана на каждый тренировочный день</li>
@@ -58,7 +62,7 @@ const Rate = () => {
               <li>Заморозка ведения: до семи дней болезни в месяц</li>
             </ul>
             <CardFooter>
-              <button>ОФОРМИТЬ</button>
+              <button onClick={() => openModal("Полный")}>ОФОРМИТЬ</button>
               <button>$440</button>
             </CardFooter>
           </Card>

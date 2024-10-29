@@ -10,8 +10,10 @@ import {
   Block,
   MobileButton,
 } from "./styled.ts";
+import { useModal } from "../../hooks/useModal.ts";
 
 const Consultation = () => {
+  const { openModal } = useModal();
   return (
     <Section>
       <Container>
@@ -27,7 +29,7 @@ const Consultation = () => {
                 комфортно и могли без давления достигать результатов. Сделайте
                 шаг к своей идеальной фигуре!
               </Description>
-              <Button>Консультация</Button>
+              <Button onClick={() => openModal()}>Консультация</Button>
             </DescriptionWrap>
           </Block>
         </div>
@@ -37,7 +39,7 @@ const Consultation = () => {
             на&nbsp;&nbsp;&nbsp;&nbsp;бесплатную&nbsp;&nbsp;&nbsp;&nbsp;консультацию
           </Title>
         </WrapperTitle>
-        <MobileButton>Консультация</MobileButton>
+        <MobileButton onClick={() => openModal()}>Консультация</MobileButton>
       </Container>
     </Section>
   );

@@ -46,16 +46,16 @@ export const TitleLine = styled.div`
   }
 `;
 
-export const Description = styled.div<{ isShow: boolean }>`
+export const Description = styled.div<{ isshow: boolean }>`
   overflow: hidden;
-  max-height: ${(props) => (props.isShow ? "1000px" : "0")};
-  opacity: ${(props) => (props.isShow ? "1" : "0")};
+  max-height: ${(props) => (props.isshow ? "1000px" : "0")};
+  opacity: ${(props) => (props.isshow ? "1" : "0")};
   transition:
     max-height 0.3s ease,
     opacity 0.3s ease;
   padding-left: calc(30% + 25px);
   max-width: 500px;
-  padding-bottom: ${(props) => (props.isShow ? "15px" : "0")};
+  padding-bottom: ${(props) => (props.isshow ? "15px" : "0")};
 
   @media (max-width: 1280px) {
     padding-left: 35px;

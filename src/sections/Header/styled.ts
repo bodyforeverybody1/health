@@ -293,6 +293,8 @@ export const ButtonConsult = styled.button`
   text-transform: uppercase;
   //position: relative;
   //top: -50px;
+  color: black;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     margin-top: 20px;
