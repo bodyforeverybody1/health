@@ -9,7 +9,7 @@ const Modal = () => {
   const [typeMessage, setTypeMessage] = useState<string>();
   const [textArea, setTextArea] = useState<string>();
 
-  const { closeModal, isOpen } = useModal();
+  const { closeModal, isOpen, type } = useModal();
 
   const sendOrder = async (e: any) => {
     e.preventDefault();
@@ -20,6 +20,7 @@ const Modal = () => {
         chat_id: "-4545168563", // work
         text: `
 📆 ${getDate()}
+${type === "Базовый" ? "Базовый" : type === "Полный" ? "Полный" : "Консультация"}
 Имя: ${user}
 Мессенджер: ${typeMessage}
 ${textArea}

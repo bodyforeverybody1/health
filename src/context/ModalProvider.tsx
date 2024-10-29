@@ -7,15 +7,19 @@ interface ModalProviderProps {
 
 export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => {
+  const [type, setType] = useState("");
+  const openModal = (value?: string) => {
     setIsOpen(true);
+    if (value) {
+      setType(value);
+    }
   };
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  const value = { isOpen, openModal, closeModal };
+  const value = { isOpen, openModal, closeModal, type };
 
   return (
     <ModalContext.Provider value={value}>{children}</ModalContext.Provider>
