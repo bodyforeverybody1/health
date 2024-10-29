@@ -19,6 +19,13 @@ export const Wrapper = styled.div`
   ${Column}:not(:nth-child(1)) {
     padding-top: 30px;
   }
+
+  a {
+    transition: all 0.3s;
+    &:hover {
+      color: rgba(255, 190, 11, 1);
+    }
+  }
 `;
 
 export const PersonalTrainer = styled.div`

@@ -30,6 +30,7 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
 
+  color: black;
   @media (max-width: 768px) {
     display: none;
   }
@@ -57,10 +58,12 @@ export const Description = styled.div`
   font-size: 1.8vw;
   font-weight: bold;
   margin-bottom: 40px;
+  line-height: 2vw;
 
   @media (max-width: 768px) {
     font-size: 3.5vw;
     margin-bottom: 0;
+    line-height: 4vw;
   }
 `;
 

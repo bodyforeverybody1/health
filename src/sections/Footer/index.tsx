@@ -181,7 +181,10 @@ const Footer = () => {
         <FooterBottom>
           <div>Политика конфиденциальности</div>
           <div>
-            2024 by <a href="">Elena Zakrevskaya</a>
+            2024 by{" "}
+            <a href="https://www.behance.net/helenmarquise" target="_blank">
+              Elena Zakrevskaya
+            </a>
           </div>
         </FooterBottom>
       </Container>

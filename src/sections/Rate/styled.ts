@@ -8,6 +8,9 @@ export const Title = styled.div`
   padding-top: 100px;
   padding-bottom: 15px;
   letter-spacing: -0.5vw;
+  @media (max-width: 1280px) {
+    font-size: 30px;
+  }
 `;
 
 export const CardsWrapper = styled.div`
@@ -32,7 +35,6 @@ export const Card = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 25px;
 
   & ul li::marker {
     color: rgba(255, 190, 11, 1);
@@ -94,6 +96,7 @@ export const CardFooter = styled.div`
     }
     @media (max-width: 768px) {
       font-size: 20px;
+      padding: 25px;
     }
   }
   & button:first-child {
@@ -138,7 +141,7 @@ export const CardFooter = styled.div`
     color: white;
     font-family: Inter, sans-serif;
     font-weight: bold;
-    border: 1px solid black;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     @media (max-width: 1280px) {
       border: none;

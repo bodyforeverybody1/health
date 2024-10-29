@@ -48,7 +48,7 @@ export const FirstName = styled.div`
     @media (min-width: 768px) {
       max-width: 6.5vw;
       margin-top: 16px;
-      margin-left: 16px;
+      //margin-left: 16px;
       font-size: 1vw;
       line-height: 1vw;
     }
@@ -71,8 +71,6 @@ export const LastName = styled.div`
     font-size: 2vw;
     @media (min-width: 768px) {
       max-width: 7.5vw;
-      margin-top: 16px;
-      margin-left: 16px;
       font-size: 1vw;
       line-height: 1vw;
     }
@@ -187,7 +185,7 @@ export const Block = styled.div`
     rgba(247, 164, 26, 1) 48%,
     rgba(242, 225, 8, 1) 98%
   );
-  border-radius: 18vw;
+  border-radius: 21vw;
   &:before {
     content: "";
     position: absolute;
@@ -204,7 +202,7 @@ export const Block = styled.div`
       rgba(247, 164, 26, 1) 48%,
       rgba(242, 225, 8, 1) 98%
     );
-    border-radius: 18vw;
+    border-radius: 22vw;
     position: relative;
     top: -5.5vw;
     //z-index: -1;
@@ -225,6 +223,10 @@ export const Elements = styled.div`
   a {
     text-decoration: none;
     color: white;
+    transition: all 0.3s;
+    &:hover {
+      color: rgba(255, 190, 11, 1);
+    }
   }
 
   @media (max-width: 768px) {
@@ -240,6 +242,10 @@ export const FullName = styled.div`
   a {
     text-decoration: none;
     color: white;
+    transition: all 0.3s;
+    &:hover {
+      color: rgba(255, 190, 11, 1);
+    }
   }
   @media (max-width: 768px) {
     font-size: 3.8vw;
@@ -263,6 +269,10 @@ export const Links = styled.div`
   a {
     text-decoration: none;
     color: white;
+    transition: all 0.3s;
+    &:hover {
+      color: rgba(255, 190, 11, 1);
+    }
   }
   @media (max-width: 1200px) {
     font-size: 1.8vw;

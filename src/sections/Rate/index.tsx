@@ -5,9 +5,9 @@ import {
   CardsWrapper,
   CardTitle,
   CardWrapper,
-  Title,
   Type,
   CardFooter,
+  Title,
 } from "./styled.ts";
 import { useModal } from "../../hooks/useModal.ts";
 
@@ -21,19 +21,21 @@ const Rate = () => {
       <CardsWrapper>
         <CardWrapper>
           <Card>
-            <CardTitle>Базовый</CardTitle>
-            <CardDescription>
-              <div>Ведение по рациону питания/обучение</div>
-              <div> на 1 месяц</div>
-            </CardDescription>
-            <ul>
-              <li>Составление сбалансированного рациона, корректировки</li>
-              <li>
-                Обучение по средствам обратной связи (текст, голосовые,
-                видео-встречи)
-              </li>
-              <li>Общие рекомендации по активности и образу жизни</li>
-            </ul>
+            <div style={{ padding: 25 }}>
+              <CardTitle>Базовый</CardTitle>
+              <CardDescription>
+                <div>Ведение по рациону питания/обучение</div>
+                <div> на 1 месяц</div>
+              </CardDescription>
+              <ul>
+                <li>Составление сбалансированного рациона, корректировки</li>
+                <li>
+                  Обучение по средствам обратной связи (текст, голосовые,
+                  видео-встречи)
+                </li>
+                <li>Общие рекомендации по активности и образу жизни</li>
+              </ul>
+            </div>
             <CardFooter>
               <button onClick={() => openModal("Базовый")}>ОФОРМИТЬ</button>
               <button>$320</button>

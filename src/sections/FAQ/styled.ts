@@ -31,6 +31,7 @@ export const PlusBtn = styled.div`
 
 export const WrapperLine = styled.div<{ isActive: boolean }>`
   display: flex;
+  align-items: center;
   padding: 15px 0;
   border-top: 1px solid rgba(90, 90, 90, 1);
 `;
@@ -58,7 +59,7 @@ export const Description = styled.div<{ isshow: boolean }>`
   padding-bottom: ${(props) => (props.isshow ? "15px" : "0")};
 
   @media (max-width: 1280px) {
-    padding-left: 35px;
+    padding: 0 35px 10px 35px;
     font-size: 12px;
   }
 `;
