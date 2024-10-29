@@ -77,14 +77,15 @@ const Header = () => {
         <Block>
           <WrapperCircle>
             <CircleText />
-            {/*<Circle href="/" />*/}
+            <a href="/#video">
+              <img src="/Arrow.svg" alt="icon" />
+            </a>
           </WrapperCircle>
         </Block>
       </BlockWrapper>
       <ButtonConsult onClick={() => handleClick()}>
         Бесплатная консультация
       </ButtonConsult>
-      {/*<button onClick={() => logout()}>Выйти {user}</button>*/}
     </Section>
   );
 };

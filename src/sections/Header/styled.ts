@@ -167,6 +167,13 @@ export const CircleText = styled.div`
 
 export const WrapperCircle = styled.div`
   position: relative;
+
+  a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12px, -17px);
+  }
 `;
 
 export const Block = styled.div`
