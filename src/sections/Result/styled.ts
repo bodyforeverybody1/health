@@ -95,3 +95,31 @@ export const TitleSection = styled.div`
     letter-spacing: -3px;
   }
 `;
+
+const Button = `
+  width: 40px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+`;
+export const ButtonNext = styled.button<{ disabled: boolean }>`
+  & svg path {
+    fill: ${(props) =>
+      props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};
+    stroke: ${(props) =>
+      props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};
+  }
+  ${Button};
+`;
+export const ButtonPrev = styled.button<{ disabled: boolean }>`
+  & svg path {
+    fill: ${(props) =>
+      props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};
+    stroke: ${(props) =>
+      props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};
+  }
+  ${Button};
+  transform: rotate(180deg);
+`;
