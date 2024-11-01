@@ -12,6 +12,8 @@ import Video from "./sections/Video";
 import Result from "./sections/Result";
 import Modal from "./components/Modal";
 
+import { Analytics } from "@vercel/analytics/react";
+
 function App() {
   return (
     <>
@@ -26,6 +28,7 @@ function App() {
         <Video />
         <Footer />
       </AppWrapper>
+      <Analytics />
     </>
   );
 }
