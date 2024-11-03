@@ -25,14 +25,13 @@ const Header = () => {
 
   const handleClick = () => {
     openModal();
-    console.log("open modal Order");
   };
   return (
     <Section>
       <Container>
         <Wrapper>
           <Elements>
-            <a href="/">Найди себя</a>
+            <a href="/#findme">Найди себя</a>
             <a href="/#result">Результаты</a>
             <a href="/#faq">FAQ</a>
           </Elements>

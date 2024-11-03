@@ -115,10 +115,10 @@ const Footer = () => {
               <Column>
                 <Links>
                   <div>
-                    <a href="/">Найди себя</a>
+                    <a href="/#findme">Найди себя</a>
                   </div>
                   <div>
-                    <a href="#result">Результаты</a>
+                    <a href="/#result">Результаты</a>
                   </div>
                   <div>
                     <a href="/#faq">FAQ</a>
