@@ -1,6 +1,3 @@
-// import { useState } from "react";
-// import reactLogo from "@/assets/react.svg";
-// import viteLogo from "/vite.svg";
 import Header from "./sections/Header";
 import Rate from "./sections/Rate";
 import About from "./sections/About";
@@ -13,6 +10,7 @@ import Result from "./sections/Result";
 import Modal from "./components/Modal";
 
 import { Analytics } from "@vercel/analytics/react";
+import FindMe from "./sections/FindMe";
 
 function App() {
   return (
@@ -22,6 +20,7 @@ function App() {
         <Header />
         <Rate />
         <About />
+        <FindMe />
         <Consultation />
         <Result />
         <Faq />
