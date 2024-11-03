@@ -16,6 +16,10 @@ export const Wrapper = styled.div`
 export const Button = styled.button<{ active: boolean }>`
   width: 100%;
   height: 64px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    border-top-right-radius: 12px;
+    
     &:hover {
         color: white
     }
@@ -31,12 +35,10 @@ export const Button = styled.button<{ active: boolean }>`
   background: ${({ active }) => (active ? "rgba(29, 29, 29, 1)" : "black")};
   color: ${({ active }) => (active ? "white" : "rgba(155, 155, 155, 1)")};
   font-size: 28px;
-  font-family: "Bebas Neue", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
-    transition: all 0.3s;
-    border: ${({ active }) => (active ? "none" : "#5A5A5A")}
- 
+  transition: all 0.3s;
+  border:  ${({ active }) => (active ? "none" : "1px solid #5A5A5A")}
 }
 `;
 
