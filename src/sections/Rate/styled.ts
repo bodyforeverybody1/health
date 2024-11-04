@@ -1,18 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.div`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 5.3vw;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-bottom: 15px;
-  letter-spacing: -0.5vw;
-  @media (max-width: 1280px) {
-    font-size: 30px;
-  }
-`;
-
 export const CardsWrapper = styled.div`
   display: flex;
   gap: 20px;
@@ -29,6 +16,7 @@ export const CardWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    min-height: auto;
   }
 `;
 export const Card = styled.div`
@@ -36,8 +24,33 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
 
-  & ul li::marker {
-    color: rgba(255, 190, 11, 1);
+  & ul {
+    list-style-type: none;
+    padding: 0;
+    & li {
+      display: flex;
+      margin-bottom: 5px;
+      padding-left: 20px;
+      position: relative;
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
+
+      &:before {
+        content: "";
+        width: 16px;
+        height: 18px;
+        background-image: url("/ArrowIconLi.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 5px;
+        position: absolute;
+        top: 4px;
+        left: 0;
+      }
+    }
   }
 `;
 export const Type = styled.div`
@@ -46,6 +59,7 @@ export const Type = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 10px 10px 0;
 
   @media (max-width: 1280px) {
     display: none;
@@ -66,10 +80,15 @@ export const Type = styled.div`
 export const CardTitle = styled.h3`
   font-size: 40px;
   margin-bottom: -10px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    margin: 0;
+  }
 `;
 export const CardDescription = styled.div`
   @media (max-width: 768px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 export const CardFooter = styled.div`
@@ -79,6 +98,10 @@ export const CardFooter = styled.div`
 
   @media (max-width: 1280px) {
     flex-direction: column-reverse;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
   }
 
   & button {
@@ -142,8 +165,10 @@ export const CardFooter = styled.div`
     font-family: Inter, sans-serif;
     font-weight: bold;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.5vw;
 
     @media (max-width: 1280px) {
+      font-size: 20px;
       border: none;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }

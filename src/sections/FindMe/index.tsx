@@ -1,4 +1,4 @@
-import { Container } from "../../styled.root.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
 import {
   Wrapper,
   Button,
@@ -7,7 +7,6 @@ import {
   Card,
   BlockPhoto,
   BlockWithoutPhoto,
-  Title,
 } from "./styled.ts";
 import { useEffect, useState } from "react";
 
@@ -129,7 +128,7 @@ const FindMe = () => {
   return (
     <section id="findme">
       <Container>
-        <Title>Найди себя</Title>
+        <RootTitle>Найди себя</RootTitle>
         <Wrapper>
           {items.map((item: IItem) => {
             return (

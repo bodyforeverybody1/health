@@ -1,4 +1,4 @@
-import { Container } from "../../styled.root.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
 import {
   Card,
   CardDescription,
@@ -7,7 +7,6 @@ import {
   CardWrapper,
   Type,
   CardFooter,
-  Title,
 } from "./styled.ts";
 import { useModal } from "../../hooks/useModal.ts";
 
@@ -15,13 +14,11 @@ const Rate = () => {
   const { openModal } = useModal();
   return (
     <Container>
-      <Title>
-        Выбери&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;свой&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;тариф
-      </Title>
+      <RootTitle>Выбери свой тариф</RootTitle>
       <CardsWrapper>
         <CardWrapper>
           <Card>
-            <div style={{ padding: 25 }}>
+            <div style={{ padding: 25, borderRadius: "10px 0 0 0" }}>
               <CardTitle>Базовый</CardTitle>
               <CardDescription>
                 <div>Ведение по рациону питания/обучение</div>
@@ -47,7 +44,12 @@ const Rate = () => {
         </CardWrapper>
         <CardWrapper>
           <Card>
-            <div style={{ padding: 25 }}>
+            <div
+              style={{
+                padding: 25,
+                borderRadius: "10px 0 0 0",
+              }}
+            >
               <CardTitle>Полный</CardTitle>
               <CardDescription>
                 <div>Ведение по фитнесу (полное сопровождение)</div>

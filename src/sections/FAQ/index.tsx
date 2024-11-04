@@ -1,6 +1,5 @@
-import { Container } from "../../styled.root.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
 import {
-  Title,
   Number,
   WrapperLine,
   PlusBtn,
@@ -23,8 +22,8 @@ const Faq = () => {
   return (
     <section id="faq">
       <Container>
-        <Title>FAQ</Title>
-        <div>
+        <RootTitle>FAQ</RootTitle>
+        <div style={{ borderBottom: "1px solid rgba(90, 90, 90, 1)" }}>
           {FAQ.map((el: IFaq, index) => {
             return (
               <MainLine key={el.title} isActive={activeIndex === index}>

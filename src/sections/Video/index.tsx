@@ -1,5 +1,4 @@
-import { Container } from "../../styled.root.ts";
-import { Title } from "./styled.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
 import { useEffect, useRef } from "react";
 
 const Video: React.FC = () => {
@@ -36,7 +35,7 @@ const Video: React.FC = () => {
     <section id="video">
       <Container>
         <div>
-          <Title>проморолик</Title>
+          <RootTitle>проморолик</RootTitle>
           <div>
             <video ref={videoRef} width="100%" height="100%" controls>
               <source src="/video/video.mp4" type="video/mp4" />

@@ -243,6 +243,7 @@ export const FullName = styled.div`
     text-decoration: none;
     color: white;
     transition: all 0.3s;
+    //font-size: 0.9vw;
     &:hover {
       color: rgba(255, 190, 11, 1);
     }
@@ -251,7 +252,7 @@ export const FullName = styled.div`
     font-size: 3.8vw;
   }
   @media (min-width: 768px) {
-    font-size: 1.8vw;
+    font-size: 0.9vw;
   }
 `;
 
@@ -308,8 +309,8 @@ export const ButtonConsult = styled.button`
   padding: 0 50px;
   margin: 0 auto;
   text-transform: uppercase;
-  //position: relative;
-  //top: -50px;
+  position: relative;
+  top: -3vw;
   color: black;
   cursor: pointer;
 

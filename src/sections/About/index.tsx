@@ -1,12 +1,5 @@
-import { Container } from "../../styled.root.ts";
-import {
-  Card,
-  Content,
-  Description,
-  Title,
-  TitleSection,
-  Wrapper,
-} from "./styled.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
+import { Card, Content, Description, Title, Wrapper } from "./styled.ts";
 import { ABOUT_TEXT } from "../../consts";
 
 const About = () => {
@@ -14,7 +7,7 @@ const About = () => {
     <section>
       <Container>
         <Wrapper>
-          <TitleSection>О тренере</TitleSection>
+          <RootTitle>О тренере</RootTitle>
           <Content>
             {ABOUT_TEXT.map((item, index) => (
               <Card key={item.titleFirst} left={index % 2 == 0}>

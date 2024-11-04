@@ -1,21 +1,9 @@
 import styled from "styled-components";
 
-export const Title = styled.div`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 5.3vw;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-bottom: 15px;
-  letter-spacing: -0.1vw;
-
-  @media (max-width: 768px) {
-    font-size: 35px;
-  }
-`;
 export const Number = styled.div`
   width: 25px;
   text-align: center;
+  padding-left: 10px;
 `;
 export const PlusBtn = styled.div`
   width: 40px;
@@ -26,7 +14,8 @@ export const PlusBtn = styled.div`
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-  font-size: 20px;
+  font-size: 40px;
+  padding-right: 10px;
 `;
 
 export const WrapperLine = styled.div<{ isActive: boolean }>`
@@ -57,6 +46,7 @@ export const Description = styled.div<{ isshow: boolean }>`
   padding-left: calc(30% + 25px);
   max-width: 500px;
   padding-bottom: ${(props) => (props.isshow ? "15px" : "0")};
+  line-height: 20px;
 
   @media (max-width: 1280px) {
     padding: 0 35px 10px 35px;

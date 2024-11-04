@@ -25,15 +25,17 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
 
 export const ModalContentStyles = styled.div`
   background-color: rgba(20, 20, 20, 1);
-  padding: 20px;
+  padding: 0 80px 80px 80px;
   border-radius: 4px;
   width: 300px;
   text-align: center;
   min-width: 500px;
   position: relative;
+  border: 1px solid white;
 
   @media (max-width: 768px) {
     min-width: 80%;
+    padding: 20px;
   }
 
   & h2 {

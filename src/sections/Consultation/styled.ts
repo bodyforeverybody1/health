@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.div`
   background: rgba(29, 29, 29, 1);
-  padding: 80px 0;
+  padding: 80px 0 0;
 
   @media (max-width: 768px) {
     padding: 30px 0;
@@ -95,6 +95,7 @@ export const MobileButton = styled.button`
   position: relative;
   top: -6vw;
   cursor: pointer;
+  color: black;
   @media (min-width: 768px) {
     display: none;
   }

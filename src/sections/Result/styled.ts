@@ -73,26 +73,11 @@ export const Title = styled.div`
 export const Description = styled.div`
   font-size: 20px;
   line-height: 22px;
+  min-height: 70px;
 
   @media (max-width: 768px) {
     font-size: 13px;
     line-height: 16px;
-  }
-`;
-
-export const TitleSection = styled.div`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 4.3vw;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-bottom: 15px;
-  letter-spacing: -7px;
-  line-height: 80px;
-
-  @media (max-width: 768px) {
-    font-size: 35px;
-    letter-spacing: -3px;
   }
 `;
 

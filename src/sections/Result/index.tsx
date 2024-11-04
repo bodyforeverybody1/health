@@ -1,10 +1,9 @@
-import { Container } from "../../styled.root.ts";
+import { Container, RootTitle } from "../../styled.root.ts";
 import {
   Card,
   ImageWrapper,
   Title,
   Description,
-  TitleSection,
   ButtonNext,
   ButtonPrev,
 } from "./styled";
@@ -108,7 +107,7 @@ const Result = () => {
     <section id="result">
       <Container>
         <div>
-          <TitleSection>Результаты</TitleSection>
+          <RootTitle>Результаты</RootTitle>
           <div>
             <div>
               <Card>

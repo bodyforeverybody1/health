@@ -103,14 +103,3 @@ export const Description = styled.div`
     font-size: 12px;
   }
 `;
-
-export const TitleSection = styled.div`
-  font-size: 4.1vw;
-  text-transform: uppercase;
-  text-wrap: nowrap;
-  font-weight: bold;
-
-  @media (max-width: 1280px) {
-    font-size: 30px;
-  }
-`;

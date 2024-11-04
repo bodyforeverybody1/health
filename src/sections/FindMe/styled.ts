@@ -73,9 +73,10 @@ export const BlockPhoto = styled.div`
 
   & img {
     width: 9.3vw;
+    height: 20vw;
     @media (max-width: 768px) {
-      min-width: 100px;
-      min-height: 150px;
+      width: 130px;
+      height: 100%;
     }
   }
 `;
@@ -129,19 +130,5 @@ export const BlockWithoutPhoto = styled.div`
 
   & img {
     width: 85px;
-  }
-`;
-
-export const Title = styled.h2`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 5.3vw;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-bottom: 15px;
-  letter-spacing: -0.1vw;
-
-  @media (max-width: 768px) {
-    font-size: 35px;
   }
 `;
