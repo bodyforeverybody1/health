@@ -54,7 +54,7 @@ export const FirstName = styled.div`
       margin-top: 16px;
       font-size: 1vw;
       line-height: 1vw;
-      top: 0;
+      top: -1vw;
     }
   }
 `;
@@ -79,7 +79,7 @@ export const LastName = styled.div`
       max-width: 7.5vw;
       font-size: 1vw;
       line-height: 1vw;
-      top: 0;
+      top: -1vw;
     }
   }
 `;
