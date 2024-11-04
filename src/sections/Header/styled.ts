@@ -52,10 +52,9 @@ export const FirstName = styled.div`
     @media (min-width: 768px) {
       max-width: 6.5vw;
       margin-top: 16px;
-      //margin-left: 16px;
       font-size: 1vw;
       line-height: 1vw;
-      top: -1.1vw;
+      top: 0;
     }
   }
 `;
@@ -80,7 +79,7 @@ export const LastName = styled.div`
       max-width: 7.5vw;
       font-size: 1vw;
       line-height: 1vw;
-      top: -1.3vw;
+      top: 0;
     }
   }
 `;
