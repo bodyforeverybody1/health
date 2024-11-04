@@ -128,6 +128,11 @@ export const CardFooter = styled.div`
     font-weight: bold;
     border-radius: 0 0 0 10px;
     cursor: pointer;
+
+    transition: all 0.3s;
+    &:hover {
+      background: gray;
+    }
     @media (max-width: 1280px) {
       border-radius: 0 0 10px 10px;
     }

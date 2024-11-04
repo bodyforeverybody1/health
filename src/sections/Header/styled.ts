@@ -47,12 +47,15 @@ export const FirstName = styled.div`
     display: inline-block;
     color: rgba(255, 255, 255, 0.5);
     font-size: 2vw;
+    position: relative;
+    top: 5px;
     @media (min-width: 768px) {
       max-width: 6.5vw;
       margin-top: 16px;
       //margin-left: 16px;
       font-size: 1vw;
       line-height: 1vw;
+      top: -15px;
     }
   }
 `;
@@ -71,10 +74,13 @@ export const LastName = styled.div`
     color: rgba(255, 255, 255, 0.5);
     text-align: right;
     font-size: 2vw;
+    position: relative;
+    top: 5px;
     @media (min-width: 768px) {
       max-width: 7.5vw;
       font-size: 1vw;
       line-height: 1vw;
+      top: -15px;
     }
   }
 `;
@@ -315,6 +321,10 @@ export const ButtonConsult = styled.button`
   top: -3vw;
   color: black;
   cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: gray;
+  }
 
   @media (max-width: 768px) {
     margin-top: 20px;

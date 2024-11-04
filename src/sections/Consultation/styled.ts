@@ -30,6 +30,11 @@ export const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
 
+  transition: all 0.3s;
+  &:hover {
+    background: gray;
+  }
+
   color: black;
   @media (max-width: 768px) {
     display: none;
