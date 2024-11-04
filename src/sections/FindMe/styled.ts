@@ -132,3 +132,7 @@ export const BlockWithoutPhoto = styled.div`
     width: 85px;
   }
 `;
+
+export const Element = styled.div`
+  width: 100%;
+`;

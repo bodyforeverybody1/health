@@ -7,8 +7,9 @@ import {
   Card,
   BlockPhoto,
   BlockWithoutPhoto,
+  Element,
 } from "./styled.ts";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import OneBefore from "/find/1Before.png";
 import OneAfter from "/find/1After.png";
@@ -39,7 +40,6 @@ interface IItem {
 }
 
 const FindMe = () => {
-  const cardWrapperRef = useRef(null);
   const items: IItem[] = [
     {
       name: "Ольга",
@@ -121,13 +121,56 @@ const FindMe = () => {
     },
   ];
 
-  const [activeItem, setActiveItem] = useState<IItem>();
+  const ContentComponent = () => {
+    return (
+      <Content>
+        <CardWrapper>
+          <Card index="1">
+            <BlockPhoto>
+              <img src={activeItem?.imageBefore} alt="before" />
+              <div>{activeItem?.textFirst}</div>
+            </BlockPhoto>
+          </Card>
+          <Card index="2">
+            <BlockWithoutPhoto>
+              <img src="/Elements.png" alt="elements" />
+              <div>{activeItem?.textSecond}</div>
+            </BlockWithoutPhoto>
+          </Card>
+          <Card index="3">
+            <BlockWithoutPhoto>
+              <img src="/Elements.png" alt="elements" />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  height: "100%",
+                }}
+              >
+                {activeItem?.textThird}
+              </div>
+            </BlockWithoutPhoto>
+          </Card>
+          <Card index="4">
+            <BlockPhoto>
+              <img src={activeItem?.imageAfter} alt="after" />
+              <div>{activeItem?.textQuadruple}</div>
+            </BlockPhoto>
+          </Card>
+        </CardWrapper>
+      </Content>
+    );
+  };
+  const [activeItem, setActiveItem] = useState<IItem | null>();
   const handleClick = (item: IItem) => {
-    setActiveItem(item);
-    // console.log(cardWrapperRef.current);
-    // if (cardWrapperRef?.current) cardWrapperRef.current.style.scroll = 10;
+    if (activeItem?.name === item.name) {
+      setActiveItem(null);
+    } else {
+      setActiveItem(item);
+    }
   };
 
+  const isMobile = window.innerWidth < 768;
   useEffect(() => {
     setActiveItem(items[0]);
   }, []);
@@ -135,9 +178,9 @@ const FindMe = () => {
     <section id="findme">
       <Container>
         <RootTitle>Найди себя</RootTitle>
-        <Wrapper>
-          {items.map((item: IItem) => {
-            return (
+        {items.map((item: IItem) => {
+          return isMobile ? (
+            <Wrapper key={item.name}>
               <Button
                 key={item.name}
                 active={activeItem?.name === item.name}
@@ -145,45 +188,25 @@ const FindMe = () => {
               >
                 {item.name}
               </Button>
-            );
-          })}
-        </Wrapper>
-        <Content>
-          <CardWrapper ref={cardWrapperRef}>
-            <Card index="1">
-              <BlockPhoto>
-                <img src={activeItem?.imageBefore} alt="before" />
-                <div>{activeItem?.textFirst}</div>
-              </BlockPhoto>
-            </Card>
-            <Card index="2">
-              <BlockWithoutPhoto>
-                <img src="/Elements.png" alt="elements" />
-                <div>{activeItem?.textSecond}</div>
-              </BlockWithoutPhoto>
-            </Card>
-            <Card index="3">
-              <BlockWithoutPhoto>
-                <img src="/Elements.png" alt="elements" />
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-end",
-                    height: "100%",
-                  }}
-                >
-                  {activeItem?.textThird}
-                </div>
-              </BlockWithoutPhoto>
-            </Card>
-            <Card index="4">
-              <BlockPhoto>
-                <img src={activeItem?.imageAfter} alt="after" />
-                <div>{activeItem?.textQuadruple}</div>
-              </BlockPhoto>
-            </Card>
-          </CardWrapper>
-        </Content>
+              {activeItem?.name === item.name ? (
+                <Element>
+                  <ContentComponent />
+                </Element>
+              ) : null}
+            </Wrapper>
+          ) : (
+            <Wrapper key={item.name}>
+              <Button
+                key={item.name}
+                active={activeItem?.name === item.name}
+                onClick={() => handleClick(item)}
+              >
+                {item.name}
+              </Button>
+            </Wrapper>
+          );
+        })}
+        {!isMobile ? <ContentComponent /> : null}
       </Container>
     </section>
   );
