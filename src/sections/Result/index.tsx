@@ -104,7 +104,7 @@ const Result = () => {
   };
 
   return (
-    <section id="result">
+    <section id="result" style={{ overflow: "hidden" }}>
       <Container>
         <div>
           <RootTitle>Результаты</RootTitle>

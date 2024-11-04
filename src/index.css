@@ -23,3 +23,9 @@ body {
   padding: 0;
 }
 
+@font-face {
+  font-family: "BebasNeueBold";
+  src: local("BebasNeueBold"),
+  url("./fonts/BebasNeueBold.ttf") format("truetype");
+  font-weight: bold;
+}

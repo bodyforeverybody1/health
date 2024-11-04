@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 export const Button = styled.button<{ active: boolean }>`
   width: 100%;
   height: 64px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "BebasNeueBold", sans-serif;
     font-weight: bold;
     border-top-right-radius: 12px;
     

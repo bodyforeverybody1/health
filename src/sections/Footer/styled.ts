@@ -40,9 +40,8 @@ export const PersonalTrainer = styled.div`
 const nameStyle = `
     font-size: 85px;
     color: rgba(255, 190, 11, 1);
-    font-family: "Bebas Neue", sans-serif;
+      font-family: "BebasNeueBold", sans-serif;
     font-weight: bold;
-    letter-spacing: -0.4vw;
     text-transform: uppercase;
     
     @media (max-width: 768px){
@@ -60,7 +59,7 @@ export const PersonalTrainerFirstName = styled.div`
 export const PersonalTrainerLastName = styled.div`
   ${nameStyle};
   position: relative;
-  top: -65px;
+  top: -70px;
   @media (max-width: 768px) {
     top: -30px;
   }

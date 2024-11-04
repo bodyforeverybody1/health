@@ -16,6 +16,7 @@ export const Container = styled.div`
 
 export const RootTitle = styled.h2`
   font-size: 4.3vw;
+  font-family: "BebasNeueBold", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   padding: 0 0 15px;
@@ -23,28 +24,5 @@ export const RootTitle = styled.h2`
   margin: 0;
   @media (max-width: 1280px) {
     font-size: 30px;
-  }
-`;
-
-export const SectionTitle = styled.h2`
-  font-family: "Bebas Neue", sans-serif;
-  //font-size: 4.3vw;
-  text-transform: uppercase;
-  font-weight: bold;
-  //padding-top: 100px;
-  //padding-bottom: 15px;
-  //letter-spacing: -0.5vw;
-
-  & span {
-    font-size: 4.1vw;
-    line-height: 4.1vw;
-    padding: 0;
-    margin: 0;
-    letter-spacing: -5px;
-
-    @media (max-width: 768px) {
-      font-size: 7.6vw;
-      line-height: 7.6vw;
-    }
   }
 `;

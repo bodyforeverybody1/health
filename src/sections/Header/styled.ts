@@ -21,16 +21,18 @@ export const Line = styled.div`
 `;
 
 const MixinName = `
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "BebasNeueBold", sans-serif;
   font-weight: bold;
-  letter-spacing: -0.4vw;
-  transform: scale(1, 1.8);
 
-    font-size: 9.5vw;
+    font-size: 11.9vw;
+    line-height: 11.9vw;
+    transform: scale(1, 1.2);
+    position: relative;
+    top: 10px;
 
-  @media (min-width: 768px) {
-   font-size: 7.5vw;
-  }
+  // @media (min-width: 768px) {
+  //  font-size: 7.5vw;
+  // }
 
   `;
 

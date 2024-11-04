@@ -37,20 +37,21 @@ export const Button = styled.button`
 `;
 
 export const Title = styled.div`
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 5.3vw;
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 8.3vw;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: -0.5vw;
 `;
 
 export const WrapperTitle = styled.div`
   position: relative;
   top: -4vw;
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 8.3vw;
 
   ${Title}:last-child {
     position: relative;
-    top: -3.3vw;
+    top: -5.2vw;
   }
 `;
 

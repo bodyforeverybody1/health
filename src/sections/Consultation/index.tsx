@@ -35,9 +35,7 @@ const Consultation = () => {
         </div>
         <WrapperTitle>
           <Title>Запись</Title>
-          <Title>
-            на&nbsp;&nbsp;&nbsp;&nbsp;бесплатную&nbsp;&nbsp;&nbsp;&nbsp;консультацию
-          </Title>
+          <Title>на бесплатную консультацию</Title>
         </WrapperTitle>
         <MobileButton onClick={() => openModal()}>Консультация</MobileButton>
       </Container>

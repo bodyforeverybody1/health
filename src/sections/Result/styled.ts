@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 const CardText = `
     text-transform: uppercase;
-    font-family: "Bebas Neue", sans-serif;
+     font-family: "BebasNeueBold", sans-serif;
     color: rgba(29, 29, 29, 1);
-    font-size: 3.2vw;
+    font-size: 7.2vw;
     line-height: 7.2vw;
     font-weight: bold;
     position: absolute;
@@ -23,8 +23,10 @@ export const Card = styled.div`
   &:before {
     content: "Трансформация";
     ${CardText};
-    left: -31vw;
+    left: -35vw;
     top: 10vw;
+    z-index: -1;
+    letter-spacing: -0.4vw;
     @media (max-width: 768px) {
       display: none;
     }
@@ -33,7 +35,9 @@ export const Card = styled.div`
     content: "моих клиентов";
     ${CardText};
     top: 10vw;
-    right: -28vw;
+    right: -32vw;
+    z-index: -1;
+    letter-spacing: -0.4vw;
     @media (max-width: 768px) {
       display: none;
     }

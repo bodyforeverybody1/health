@@ -69,11 +69,10 @@ export const Type = styled.div`
     display: block;
 
     font-size: 5.2vw;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "BebasNeueBold", sans-serif;
     color: rgba(29, 29, 29, 1);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: -8px;
     transform: rotate(-90deg);
   }
 `;
