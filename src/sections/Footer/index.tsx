@@ -179,7 +179,9 @@ const Footer = () => {
           )}
         </Wrapper>
         <FooterBottom>
-          <div>Политика конфиденциальности</div>
+          <a href="/PrivacyPolicy.pdf" target="_blank">
+            Политика конфиденциальности
+          </a>
           <div>
             2024 by{" "}
             <a href="https://www.behance.net/helenmarquise" target="_blank">
