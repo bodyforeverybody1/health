@@ -48,14 +48,14 @@ export const FirstName = styled.div`
     color: rgba(255, 255, 255, 0.5);
     font-size: 2vw;
     position: relative;
-    top: 5px;
+    top: 1.3vw;
     @media (min-width: 768px) {
       max-width: 6.5vw;
       margin-top: 16px;
       //margin-left: 16px;
       font-size: 1vw;
       line-height: 1vw;
-      top: -15px;
+      top: -1.1vw;
     }
   }
 `;
@@ -75,12 +75,12 @@ export const LastName = styled.div`
     text-align: right;
     font-size: 2vw;
     position: relative;
-    top: 5px;
+    top: 1vw;
     @media (min-width: 768px) {
       max-width: 7.5vw;
       font-size: 1vw;
       line-height: 1vw;
-      top: -15px;
+      top: -1.3vw;
     }
   }
 `;
@@ -338,12 +338,14 @@ export const ButtonConsult = styled.button`
     width: 51px;
     height: 32px;
     background: url("/Elements.png") no-repeat center;
+    background-size: contain;
   }
   &:after {
     content: "";
     width: 51px;
     height: 32px;
     background: url("/Elements.png") no-repeat center;
+    background-size: contain;
     transform: rotate(180deg);
   }
 `;

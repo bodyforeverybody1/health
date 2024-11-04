@@ -94,6 +94,8 @@ const Button = `
   
 `;
 export const ButtonNext = styled.button<{ disabled: boolean }>`
+  margin: 0;
+  padding: 0;
   & svg path {
     fill: ${(props) =>
       props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};
@@ -103,6 +105,8 @@ export const ButtonNext = styled.button<{ disabled: boolean }>`
   ${Button};
 `;
 export const ButtonPrev = styled.button<{ disabled: boolean }>`
+  margin: 0;
+  padding: 0;
   & svg path {
     fill: ${(props) =>
       props.disabled ? "rgba(255, 229, 157, 1)" : "rgba(255, 190, 11, 1)"};

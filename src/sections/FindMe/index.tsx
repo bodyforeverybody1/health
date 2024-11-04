@@ -8,7 +8,7 @@ import {
   BlockPhoto,
   BlockWithoutPhoto,
 } from "./styled.ts";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import OneBefore from "/find/1Before.png";
 import OneAfter from "/find/1After.png";
@@ -39,6 +39,7 @@ interface IItem {
 }
 
 const FindMe = () => {
+  const cardWrapperRef = useRef(null);
   const items: IItem[] = [
     {
       name: "Ольга",
@@ -121,6 +122,11 @@ const FindMe = () => {
   ];
 
   const [activeItem, setActiveItem] = useState<IItem>();
+  const handleClick = (item: IItem) => {
+    setActiveItem(item);
+    // console.log(cardWrapperRef.current);
+    // if (cardWrapperRef?.current) cardWrapperRef.current.style.scroll = 10;
+  };
 
   useEffect(() => {
     setActiveItem(items[0]);
@@ -135,7 +141,7 @@ const FindMe = () => {
               <Button
                 key={item.name}
                 active={activeItem?.name === item.name}
-                onClick={() => setActiveItem(item)}
+                onClick={() => handleClick(item)}
               >
                 {item.name}
               </Button>
@@ -143,7 +149,7 @@ const FindMe = () => {
           })}
         </Wrapper>
         <Content>
-          <CardWrapper>
+          <CardWrapper ref={cardWrapperRef}>
             <Card index="1">
               <BlockPhoto>
                 <img src={activeItem?.imageBefore} alt="before" />
