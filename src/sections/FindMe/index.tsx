@@ -178,34 +178,36 @@ const FindMe = () => {
     <section id="findme">
       <Container>
         <RootTitle>Найди себя</RootTitle>
-        {items.map((item: IItem) => {
-          return isMobile ? (
-            <Wrapper key={item.name}>
-              <Button
-                key={item.name}
-                active={activeItem?.name === item.name}
-                onClick={() => handleClick(item)}
-              >
-                {item.name}
-              </Button>
-              {activeItem?.name === item.name ? (
-                <Element>
-                  <ContentComponent />
-                </Element>
-              ) : null}
-            </Wrapper>
-          ) : (
-            <Wrapper key={item.name}>
-              <Button
-                key={item.name}
-                active={activeItem?.name === item.name}
-                onClick={() => handleClick(item)}
-              >
-                {item.name}
-              </Button>
-            </Wrapper>
-          );
-        })}
+        <div style={{ display: isMobile ? "" : "flex" }}>
+          {items.map((item: IItem) => {
+            return isMobile ? (
+              <Wrapper key={item.name}>
+                <Button
+                  key={item.name}
+                  active={activeItem?.name === item.name}
+                  onClick={() => handleClick(item)}
+                >
+                  {item.name}
+                </Button>
+                {activeItem?.name === item.name ? (
+                  <Element>
+                    <ContentComponent />
+                  </Element>
+                ) : null}
+              </Wrapper>
+            ) : (
+              <Wrapper key={item.name}>
+                <Button
+                  key={item.name}
+                  active={activeItem?.name === item.name}
+                  onClick={() => handleClick(item)}
+                >
+                  {item.name}
+                </Button>
+              </Wrapper>
+            );
+          })}
+        </div>
         {!isMobile ? <ContentComponent /> : null}
       </Container>
     </section>

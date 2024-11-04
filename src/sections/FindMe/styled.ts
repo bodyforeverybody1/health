@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
 
   @media (max-width: 1180px) {
     flex-wrap: wrap;
@@ -24,9 +25,6 @@ export const Button = styled.button<{ active: boolean }>`
         color: white
     }
     
-    @media (max-width: 1180px) {
-        width: 33%
-    }
     @media (max-width: 768px) {
         width: 100%;
         font-size: 22px
