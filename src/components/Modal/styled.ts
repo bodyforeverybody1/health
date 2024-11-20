@@ -20,6 +20,14 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 300px;
+    }
   }
 `;
 
@@ -58,7 +66,7 @@ export const ModalContentStyles = styled.div`
     }
   }
 
-  & input,
+  & input:not([type="checkbox"]),
   textarea {
     background: transparent;
     border: 1px solid rgba(90, 90, 90, 1);
@@ -100,17 +108,41 @@ export const CloseBtn = styled.span`
 
 export const FieldSet = styled.div`
   & label {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 20px;
+    text-align: left;
+
+    input[type="checkbox"] {
+      appearance: none; /* Убираем стандартный стиль браузера */
+      width: 25px;
+      height: 25px;
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: black; /* Черный фон при активном состоянии */
+    }
+
+    input[type="checkbox"]:checked::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 6px;
+      height: 12px;
+      border: solid white; /* Белая галочка */
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg); /* Галочка под углом */
+    }
 
     & a {
       color: rgba(155, 155, 155, 1);
       text-decoration: none;
     }
-  }
-
-  & input[type="checkbox"] {
-    background-color: red;
-    color: black;
   }
 `;

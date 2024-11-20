@@ -16,6 +16,8 @@ const Modal = () => {
   const [isPolitic, setIsPolitic] = useState<boolean>();
   const [isAge, setIsAge] = useState<boolean>();
   const [textArea, setTextArea] = useState<string>();
+  const [isShowSuggestion, setShowSuggestion] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { closeModal, isOpen, type } = useModal();
 
@@ -29,12 +31,14 @@ const Modal = () => {
         text: `
 📆 ${getDate()}
 ${type === "Базовый" ? "Базовый" : type === "Полный" ? "Полный" : "Консультация"}
-Имя: ${user}
-Мессенджер: ${typeMessage}
+👨‍🦰Имя: ${user}
+💻Мессенджер: ${typeMessage}
+📞Телефон: ${phone}
 ${textArea}
 
 `,
       };
+      setLoading(true);
       await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: "POST",
         headers: {
@@ -42,10 +46,17 @@ ${textArea}
         },
         body: JSON.stringify(obj),
       });
-      closeModal();
+      setLoading(false);
+      setShowSuggestion(true);
+
       setUser("");
       setTypeMessage("");
       setTextArea("");
+
+      setTimeout(() => {
+        closeModal();
+        setShowSuggestion(false);
+      }, 4000);
     } catch (err) {
       console.error(err);
     }
@@ -61,64 +72,77 @@ ${textArea}
     <ModalStyles isOpen={isOpen} onClick={() => closeModal()}>
       <ModalContentStyles onClick={(e) => e.stopPropagation()}>
         <CloseBtn onClick={() => closeModal()}>X</CloseBtn>
-        <form onSubmit={sendOrder}>
-          <h2>Оставьте заявку</h2>
-          <p>и я свяжусь с вами в ближайшее время</p>
-
-          <input
-            placeholder="Ваше имя"
-            required
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <input
-            placeholder="Номер телефона (начиная с +)"
-            required
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <input
-            required
-            placeholder="Ник телеграм (начиная с @)"
-            value={typeMessage}
-            onChange={(e) => setTypeMessage(e.target.value)}
-          />
-          <textarea
-            required
-            placeholder="Напишите сообщение... "
-            value={textArea}
-            onChange={(e) => setTextArea(e.target.value)}
-          />
-          <FieldSet>
-            <label>
+        {loading ? (
+          <div style={{ paddingTop: 50 }}>Отправляю запрос ...</div>
+        ) : isShowSuggestion ? (
+          <div>
+            <h2>Спаcибо</h2>
+            <p>Ваша заявка принята</p>
+          </div>
+        ) : (
+          <>
+            <h2>Оставьте заявку</h2>
+            <p>и я свяжусь с вами в ближайшее время</p>
+            <form onSubmit={sendOrder}>
+              <input
+                placeholder="Ваше имя"
+                required
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+              />
+              <input
+                placeholder="Номер телефона (начиная с +)"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
               <input
                 required
-                type="checkbox"
-                checked={isPolitic}
-                onChange={handlePoliticChange}
+                placeholder="Ник телеграм (начиная с @)"
+                value={typeMessage}
+                onChange={(e) => setTypeMessage(e.target.value)}
               />
-              <span>
-                Выражаю{" "}
-                <a href="/">согласие на обработку моих персональных данных</a> в
-                соответствии с{" "}
-                <a href="/">Политикой защиты персональных данных.</a>
-              </span>
-            </label>
-          </FieldSet>
-
-          <FieldSet>
-            <label>
-              <input
+              <textarea
+                style={{ marginBottom: 20 }}
                 required
-                type="checkbox"
-                checked={isAge}
-                onChange={handleAgeChange}
+                placeholder="Напишите сообщение... "
+                value={textArea}
+                onChange={(e) => setTextArea(e.target.value)}
               />
-              <span>Мне уже есть 18 лет.</span>
-            </label>
-          </FieldSet>
-          <button type="submit">Отправить</button>
-        </form>
+              <FieldSet>
+                <label>
+                  <input
+                    required
+                    type="checkbox"
+                    checked={isPolitic}
+                    onChange={handlePoliticChange}
+                  />
+                  <div>
+                    Выражаю{" "}
+                    <a href="/">
+                      согласие на обработку моих персональных данных
+                    </a>{" "}
+                    в соответствии с{" "}
+                    <a href="/">Политикой защиты персональных данных.</a>
+                  </div>
+                </label>
+              </FieldSet>
+
+              <FieldSet>
+                <label>
+                  <input
+                    required
+                    type="checkbox"
+                    checked={isAge}
+                    onChange={handleAgeChange}
+                  />
+                  <div>Мне уже есть 18 лет.</div>
+                </label>
+              </FieldSet>
+              <button type="submit">Отправить</button>
+            </form>
+          </>
+        )}
       </ModalContentStyles>
     </ModalStyles>
   );
