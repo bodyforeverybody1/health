@@ -97,3 +97,20 @@ export const CloseBtn = styled.span`
   align-items: center;
   justify-content: center;
 `;
+
+export const FieldSet = styled.div`
+  & label {
+    display: flex;
+    align-items: flex-start;
+
+    & a {
+      color: rgba(155, 155, 155, 1);
+      text-decoration: none;
+    }
+  }
+
+  & input[type="checkbox"] {
+    background-color: red;
+    color: black;
+  }
+`;

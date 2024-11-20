@@ -99,7 +99,6 @@ export const WrapperText = styled.div`
 `;
 
 export const DescriptionName = styled.h1`
-  //width: 19.7vw;
   font-size: 1vw;
   text-align: justify;
   text-transform: uppercase;
@@ -128,29 +127,6 @@ const rotate = keyframes`
   }
 `;
 
-export const Circle = styled.a`
-  display: flex;
-  width: 1.5vw;
-  height: 2vw;
-  //background: url("../../../public/Arrow.svg");
-
-  //clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  //background: white;
-  //border-radius: 15%;
-  //transform: translateX(-25px);
-  //position: absolute;
-  //left: 50%;
-  //bottom: 4.5vw;
-  transition: all 0.3s;
-  &:hover {
-    background: rgba(255, 190, 11, 1);
-  }
-
-  @media (max-width: 768px) {
-    bottom: 12vw;
-  }
-`;
-
 export const CircleText = styled.div`
   height: 135px;
   width: 135px;
@@ -159,11 +135,6 @@ export const CircleText = styled.div`
   background-size: contain;
   animation: ${rotate} 10s linear infinite;
 
-  //&:before {
-  //  content: url("../../../public/Arrow.svg");
-  //  height: 40px;
-  //  width: 30px;
-  //}
   @media (min-width: 768px) {
     width: 11.6vw;
     height: 11.6vw;

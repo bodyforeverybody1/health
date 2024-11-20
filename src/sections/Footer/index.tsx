@@ -179,15 +179,27 @@ const Footer = () => {
           )}
         </Wrapper>
         <FooterBottom>
-          <a href="/PrivacyPolicy.pdf" target="_blank">
-            Политика конфиденциальности
-          </a>
           <div>
-            2024 by{" "}
-            <a href="https://www.behance.net/helenmarquise" target="_blank">
-              Elena Zakrevskaya
+            <a href="/" target="_blank">
+              Согласие на обработку персональных данных
+            </a>
+            <a href="/PrivacyPolicy.pdf" target="_blank">
+              Политика защиты персональных данных
+            </a>
+            <a href="/" target="_blank">
+              Публичная оферта
             </a>
           </div>
+          <div>
+            <a>ИП Зайцев Дмитрий (დმიტრიი ზაიცსევ) и/н 322766967</a>
+          </div>
+
+          {/*<div>*/}
+          {/*  2024 by{" "}*/}
+          {/*  <a href="https://www.behance.net/helenmarquise" target="_blank">*/}
+          {/*    Elena Zakrevskaya*/}
+          {/*  </a>*/}
+          {/*</div>*/}
         </FooterBottom>
       </Container>
     </Section>

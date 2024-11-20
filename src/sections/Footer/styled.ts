@@ -86,14 +86,33 @@ export const FooterBottom = styled.div`
   justify-content: space-between;
   padding-bottom: 20px;
   color: rgba(90, 90, 90, 1);
+
+  & div:first-child {
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  & div:first-child a:not(:last-child) {
+    margin-right: 50px;
+  }
   a {
     color: rgba(90, 90, 90, 1);
     text-decoration: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1500px) {
     font-size: 12px;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+  //@media (max-width: 768px) {
+  //  font-size: 12px;
+  //}
 `;
 
 export const WrapperColumn = styled.div`
