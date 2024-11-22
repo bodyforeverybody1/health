@@ -180,13 +180,13 @@ const Footer = () => {
         </Wrapper>
         <FooterBottom>
           <div>
-            <a href="/" target="_blank">
+            <a href="/approve.pdf" target="_blank">
               Согласие на обработку персональных данных
             </a>
-            <a href="/PrivacyPolicy.pdf" target="_blank">
+            <a href="/polity.pdf" target="_blank">
               Политика защиты персональных данных
             </a>
-            <a href="/" target="_blank">
+            <a href="/oferta.pdf" target="_blank">
               Публичная оферта
             </a>
           </div>

@@ -9,7 +9,7 @@ const Video: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            videoRef.current?.play();
+            // videoRef.current?.play();
           } else {
             videoRef.current?.pause();
           }
