@@ -28,11 +28,11 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
       overflow-x: hidden;
       max-height: 300px;
     }
-
-    input,
-    textarea {
-      font-size: 16px;
-    }
+    // TODO: на мобилке убирает маштабирование при фокусе на елементы
+    //input,
+    //textarea {
+    //  font-size: 16px;
+    //}
   }
 `;
 
