@@ -29,7 +29,8 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
       max-height: 300px;
     }
 
-    input {
+    input,
+    textarea {
       font-size: 16px;
     }
   }
