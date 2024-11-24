@@ -28,6 +28,10 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
       overflow-x: hidden;
       max-height: 300px;
     }
+
+    input {
+      font-size: 16px;
+    }
   }
 `;
 
