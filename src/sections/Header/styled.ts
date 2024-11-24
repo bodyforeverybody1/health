@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1vw 0;
+  padding: 1.1vw;
   @media (max-width: 768px) {
     margin-top: 3vw;
   }

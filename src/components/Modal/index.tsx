@@ -7,6 +7,7 @@ import {
 } from "./styled.ts";
 import { useState } from "react";
 import { getDate } from "../../helper";
+import { useNavigate } from "react-router-dom";
 import { token } from "../../consts";
 
 const Modal = () => {
@@ -16,10 +17,11 @@ const Modal = () => {
   const [isPolitic, setIsPolitic] = useState<boolean>();
   const [isAge, setIsAge] = useState<boolean>();
   const [textArea, setTextArea] = useState<string>();
-  const [isShowSuggestion, setShowSuggestion] = useState(false);
+  const [isShowSuggestion, _] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { closeModal, isOpen, type } = useModal();
+  const navigate = useNavigate();
 
   const sendOrder = async (e: any) => {
     e.preventDefault();
@@ -46,17 +48,10 @@ ${textArea}
         },
         body: JSON.stringify(obj),
       });
+
       setLoading(false);
-      setShowSuggestion(true);
-
-      setUser("");
-      setTypeMessage("");
-      setTextArea("");
-
-      setTimeout(() => {
-        closeModal();
-        setShowSuggestion(false);
-      }, 4000);
+      closeModal();
+      navigate("/thanks");
     } catch (err) {
       console.error(err);
     }

@@ -1,5 +1,5 @@
 // import React, {ReactNode, useEffect, useState} from "react";
-// import { AuthContext } from './index.ts'
+// import { AuthContext } from './index.tsx'
 // import {ModalWrapper, Wrapper} from "./styled.ts";
 // interface AuthProviderProps {
 //     children: ReactNode;
