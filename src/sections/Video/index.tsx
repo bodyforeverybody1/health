@@ -32,7 +32,7 @@ const Video: React.FC = () => {
   }, []);
 
   return (
-    <section id="video">
+    <section id="video" style={{ marginBottom: 100 }}>
       <Container>
         <div>
           <RootTitle>проморолик</RootTitle>
