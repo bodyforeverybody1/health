@@ -104,46 +104,48 @@ const Result = () => {
   };
 
   return (
-    <section id="result" style={{ overflow: "hidden" }}>
-      <Container>
-        <div>
-          <RootTitle>Результаты</RootTitle>
+    <div style={{ overflow: "hidden" }}>
+      <section id="result">
+        <Container>
           <div>
+            <RootTitle>Результаты</RootTitle>
             <div>
-              <Card>
-                <ImageWrapper>
-                  <img src={getCurrentBefore()} alt="Before" />
-                  <img src={getCurrentNext()} alt="After" />
-                </ImageWrapper>
-                <Content />
-              </Card>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "10px",
-                  paddingTop: 20,
-                }}
-              >
-                <ButtonPrev
-                  disabled={active === 0}
-                  onClick={() => setActive(active - 1)}
+              <div>
+                <Card>
+                  <ImageWrapper>
+                    <img src={getCurrentBefore()} alt="Before" />
+                    <img src={getCurrentNext()} alt="After" />
+                  </ImageWrapper>
+                  <Content />
+                </Card>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    paddingTop: 20,
+                  }}
                 >
-                  <ResultArrow />
-                </ButtonPrev>
-                <ButtonNext
-                  disabled={active + 1 === images.length}
-                  onClick={() => setActive(active + 1)}
-                >
-                  <ResultArrow />
-                </ButtonNext>
+                  <ButtonPrev
+                    disabled={active === 0}
+                    onClick={() => setActive(active - 1)}
+                  >
+                    <ResultArrow />
+                  </ButtonPrev>
+                  <ButtonNext
+                    disabled={active + 1 === images.length}
+                    onClick={() => setActive(active + 1)}
+                  >
+                    <ResultArrow />
+                  </ButtonNext>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </div>
   );
 };
 

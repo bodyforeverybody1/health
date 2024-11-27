@@ -64,7 +64,10 @@ ${textArea}
     setIsAge(value.target.checked);
   };
   return (
-    <ModalStyles isOpen={isOpen} onClick={() => closeModal()}>
+    <ModalStyles
+      isopen={isOpen ? "true" : "false"}
+      onClick={() => closeModal()}
+    >
       <ModalContentStyles onClick={(e) => e.stopPropagation()}>
         <CloseBtn onClick={() => closeModal()}>X</CloseBtn>
         {loading ? (

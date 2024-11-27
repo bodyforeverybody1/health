@@ -10,7 +10,10 @@ const About = () => {
           <RootTitle>О тренере</RootTitle>
           <Content>
             {ABOUT_TEXT.map((item, index) => (
-              <Card key={item.titleFirst} left={index % 2 == 0}>
+              <Card
+                key={item.titleFirst}
+                left={index % 2 == 0 ? "true" : "false"}
+              >
                 <Title>
                   <span>{item.titleFirst}</span> {item.titleSecond}
                 </Title>

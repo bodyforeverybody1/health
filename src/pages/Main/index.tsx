@@ -11,13 +11,15 @@ const MainPage = () => {
   return (
     <>
       <Header />
-      <Rate />
-      <About />
-      <FindMe />
-      <Consultation />
-      <Result />
-      <Faq />
-      <Video />
+      <div style={{ display: "flex", flexDirection: "column", gap: 100 }}>
+        <Rate />
+        <About />
+        <FindMe />
+        <Consultation />
+        <Result />
+        <Faq />
+        <Video />
+      </div>
     </>
   );
 };

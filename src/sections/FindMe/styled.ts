@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Button = styled.button<{ active: boolean }>`
+export const Button = styled.button<{ active: string }>`
   width: 100%;
   height: 64px;
     font-family: "BebasNeueBold", sans-serif;
@@ -30,13 +30,13 @@ export const Button = styled.button<{ active: boolean }>`
         font-size: 22px
     }
     
-  background: ${({ active }) => (active ? "rgba(29, 29, 29, 1)" : "black")};
-  color: ${({ active }) => (active ? "white" : "rgba(155, 155, 155, 1)")};
+  background: ${({ active }) => (active === "true" ? "rgba(29, 29, 29, 1)" : "black")};
+  color: ${({ active }) => (active === "true" ? "white" : "rgba(155, 155, 155, 1)")};
   font-size: 28px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s;
-  border:  ${({ active }) => (active ? "none" : "1px solid #5A5A5A")}
+  border:  ${({ active }) => (active === "true" ? "none" : "1px solid #5A5A5A")}
 }
 `;
 

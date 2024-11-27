@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const ModalStyles = styled.div<{ isOpen: boolean }>`
+export const ModalStyles = styled.div<{ isopen: string }>`
   position: fixed;
-  top: ${({ isOpen }) => (isOpen ? 0 : "-500px")};
+  top: ${({ isopen }) => (isopen === "true" ? 0 : "-500px")};
   left: 0;
   right: 0;
   bottom: 0;
@@ -13,8 +13,8 @@ export const ModalStyles = styled.div<{ isOpen: boolean }>`
   z-index: 10;
 
   transition: all 0.3s;
-  height: ${({ isOpen }) => (isOpen ? "100vh" : 0)};
-  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  height: ${({ isopen }) => (isopen === "true" ? "100vh" : 0)};
+  opacity: ${({ isopen }) => (isopen === "true" ? "1" : "0")};
 
   form {
     display: flex;

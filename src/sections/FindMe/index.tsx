@@ -184,7 +184,7 @@ const FindMe = () => {
               <Wrapper key={item.name}>
                 <Button
                   key={item.name}
-                  active={activeItem?.name === item.name}
+                  active={activeItem?.name === item.name ? "true" : "false"}
                   onClick={() => handleClick(item)}
                 >
                   {item.name}
@@ -199,7 +199,7 @@ const FindMe = () => {
               <Wrapper key={item.name}>
                 <Button
                   key={item.name}
-                  active={activeItem?.name === item.name}
+                  active={activeItem?.name === item.name ? "true" : "false"}
                   onClick={() => handleClick(item)}
                 >
                   {item.name}

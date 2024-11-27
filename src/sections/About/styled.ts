@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Card = styled.div<{ left: boolean }>`
+export const Card = styled.div<{ left: string }>`
   width: 26.8vw;
   position: relative;
 
@@ -9,7 +9,7 @@ export const Card = styled.div<{ left: boolean }>`
   }
 
   ${({ left }) => {
-    return !left
+    return left === "true"
       ? css`
           position: relative;
           right: -29.6vw;
