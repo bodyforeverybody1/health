@@ -15,14 +15,15 @@ const TopLine = () => {
       <Container>
         <div>
           <Wrapper>
-            <Elements>
-              <a href="/#findme">Найди себя</a>
-              <a href="/#result">Результаты</a>
-              <a href="/#faq">FAQ</a>
-            </Elements>
             <FullName>
               <a href="/">ДМИТРИЙ ЗАЙЦЕВ</a>
             </FullName>
+            <Elements>
+              <a href="/">Результаты</a>
+              <a href="/#faq">FAQ</a>
+              <a href="/">Отзывы</a>
+            </Elements>
+
             <Links>
               <div className="email">
                 <a target="_blank" href="mailto: zaitsevdmitri96@gmail.com">
