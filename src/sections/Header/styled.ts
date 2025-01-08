@@ -118,6 +118,15 @@ export const StyledBlock = styled.div`
 `;
 
 export const StyledPhotoBlock = styled.div`
+  & .mobile {
+    display: none;
+
+    @media (max-width: 1023px) {
+      display: block;
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+  }
   & .photo {
     width: 33.5vw;
     height: 33.5vw;
@@ -127,10 +136,13 @@ export const StyledPhotoBlock = styled.div`
     position: relative;
 
     @media (max-width: 1023px) {
-      width: 90vw;
-      height: 90vw;
-      margin-top: 15px;
+      display: none;
     }
+    //@media (max-width: 1023px) {
+    //  width: 90vw;
+    //  height: 90vw;
+    //  margin-top: 15px;
+    //}
   }
 `;
 

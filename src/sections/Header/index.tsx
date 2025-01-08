@@ -65,6 +65,12 @@ const Header = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
+            <div className="mobile">
+              <video ref={videoRef} width="100%" height="100%" controls>
+                <source src="/video/video2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <StyledName>Дмитрий Зайцев</StyledName>
             <StyledDescription>
               Твоё тело — это отражение твоих усилий

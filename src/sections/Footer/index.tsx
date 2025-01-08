@@ -115,7 +115,7 @@ const Footer = () => {
               <Column>
                 <Links>
                   <div>
-                    <a href="/#findme">Найди себя</a>
+                    <a href="/#about-me">Обо мне</a>
                   </div>
                   <div>
                     <a href="/#result">Результаты</a>
