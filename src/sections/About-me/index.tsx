@@ -79,7 +79,7 @@ const StyledSertificat = styled.div`
 
 export const AboutMe = () => {
   return (
-    <section>
+    <section id="about-me">
       <Container>
         <StyledTitle>Обо мне</StyledTitle>
         <StyledWrapper>

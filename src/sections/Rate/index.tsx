@@ -36,7 +36,7 @@ const Rate = () => {
               </div>
               <Price>$150</Price>
               <CardFooter>
-                <button onClick={() => openModal("Базовый")}>
+                <button onClick={() => openModal("Первый шаг")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>
@@ -72,7 +72,7 @@ const Rate = () => {
               </div>
               <Price>$320</Price>
               <CardFooter>
-                <button onClick={() => openModal("Базовый")}>
+                <button onClick={() => openModal("Прокачай себя")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>
@@ -117,7 +117,7 @@ const Rate = () => {
               </div>
               <Price>$410</Price>
               <CardFooter>
-                <button onClick={() => openModal("Базовый")}>
+                <button onClick={() => openModal("Звёздный результат")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>

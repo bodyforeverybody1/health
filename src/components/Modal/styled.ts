@@ -19,6 +19,7 @@ export const ModalStyles = styled.div<{ $isOpen: string }>`
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
 
     @media (max-width: 768px) {
@@ -40,7 +41,7 @@ export const ModalContentStyles = styled.div`
   background-color: rgba(20, 20, 20, 1);
   padding: 0 80px 80px 80px;
   border-radius: 4px;
-  width: 300px;
+  width: 60%;
   text-align: center;
   min-width: 500px;
   position: relative;
@@ -48,7 +49,7 @@ export const ModalContentStyles = styled.div`
 
   @media (max-width: 768px) {
     min-width: 80%;
-    padding: 20px;
+    padding: 30px;
   }
 
   & h2 {
@@ -71,13 +72,20 @@ export const ModalContentStyles = styled.div`
     }
   }
 
-  & input:not([type="checkbox"]),
-  textarea {
+  & input {
     background: transparent;
     border: 1px solid rgba(90, 90, 90, 1);
     padding: 20px;
     border-radius: 10px;
     color: white;
+    width: 50%;
+    //max-width: 400px;
+    //margin: 0 auto;
+
+    @media (max-width: 1023px) {
+      width: 80%;
+      padding: 10px 20px;
+    }
   }
   button {
     background: rgba(255, 190, 11, 1);
@@ -109,45 +117,84 @@ export const CloseBtn = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1023px) {
+    top: 10px;
+  }
 `;
 
-export const FieldSet = styled.div`
-  & label {
-    display: grid;
-    grid-template-columns: 25px 1fr;
-    gap: 20px;
-    text-align: left;
+export const StyledSubDescription = styled.span`
+  color: rgba(255, 190, 11, 1);
+  font-size: 1vw;
+  text-transform: uppercase;
 
-    input[type="checkbox"] {
-      appearance: none; /* Убираем стандартный стиль браузера */
-      width: 25px;
-      height: 25px;
-      background-color: black;
-      border: 1px solid white;
-      border-radius: 4px;
-      position: relative;
-      cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+export const StyledUl = styled.ul`
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  & li {
+    font-size: 1vw;
+    position: relative;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
     }
 
-    input[type="checkbox"]:checked {
-      background-color: black; /* Черный фон при активном состоянии */
-    }
-
-    input[type="checkbox"]:checked::before {
+    &:first-child:before {
       content: "";
       position: absolute;
-      top: 2px;
-      left: 5px;
-      width: 6px;
-      height: 12px;
-      border: solid white; /* Белая галочка */
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg); /* Галочка под углом */
+      left: -35px;
+      width: 24px;
+      height: 24px;
+      background-image: url("/award.svg");
     }
+    &:nth-child(2):before {
+      content: "";
+      position: absolute;
+      left: -35px;
+      width: 24px;
+      height: 24px;
+      background-image: url("/task-square.svg");
+    }
+    &:nth-child(3):before {
+      content: "";
+      position: absolute;
+      left: -35px;
+      width: 24px;
+      height: 24px;
+      background-image: url("/gps.svg");
+    }
+  }
+`;
 
-    & a {
-      color: rgba(155, 155, 155, 1);
-      text-decoration: none;
-    }
+export const StyledConnect = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+`;
+export const Span = styled.span<{ $active: boolean }>`
+  background: ${({ $active }) => ($active ? "rgba(255, 190, 11, 1)" : "gray")};
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
   }
 `;

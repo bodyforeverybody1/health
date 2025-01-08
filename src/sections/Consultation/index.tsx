@@ -8,13 +8,14 @@ import {
   StyledContacts,
   StyledHeaderForm,
 } from "./styled.ts";
+import { useModal } from "../../hooks/useModal.ts";
 
 const Consultation = () => {
-  // const { openModal } = useModal();
+  const { openModal } = useModal();
   return (
     <Section>
       <Container>
-        <Grid>
+        <Grid onClick={() => openModal("Консультация")}>
           <div style={{ display: "flex", flexDirection: "column", gap: "3vw" }}>
             <Content>
               <h2>Бесплатная 15-минутная</h2>

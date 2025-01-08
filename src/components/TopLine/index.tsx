@@ -6,6 +6,8 @@ import {
 } from "../../sections/Header/styled.ts";
 import { Container } from "../../styled.root.ts";
 import styled from "styled-components";
+import { useModal } from "../../hooks/useModal.ts";
+import { useLocation } from "react-router-dom";
 
 export const ButtonConsult = styled.button`
   background: rgba(255, 190, 11, 1);
@@ -63,9 +65,15 @@ export const StyledTopLine = styled.div`
   background: #1e1e1e;
 `;
 const TopLine = () => {
+  const location = useLocation();
+  const { openModal } = useModal();
   const handleClick = () => {
-    alert("handleClick");
+    openModal("Консультация");
   };
+
+  const isThank = location.pathname.includes("thank");
+
+  if (isThank) return null;
   return (
     <StyledTopLine>
       <Container>
@@ -77,7 +85,7 @@ const TopLine = () => {
             <Elements>
               <a href="/">Результаты</a>
               <a href="/#faq">FAQ</a>
-              <a href="/">Отзывы</a>
+              <a href="/#about-me">Обо мне</a>
             </Elements>
             <ButtonConsult onClick={handleClick}>
               Бесплатная консультация
