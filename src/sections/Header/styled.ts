@@ -1,14 +1,18 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Section = styled.div`
   font-size: 0.9vw;
   color: rgba(255, 255, 255, 1);
+  background: #1e1e1e;
 `;
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.1vw;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
   @media (max-width: 768px) {
     margin-top: 3vw;
   }
@@ -20,182 +24,6 @@ export const Line = styled.div`
   margin-bottom: 0.5vw;
 `;
 
-const MixinName = `
-  font-family: "BebasNeueBold", sans-serif;
-  font-weight: bold;
-
-    font-size: 11.9vw;
-    line-height: 11.9vw;
-    transform: scale(1, 1.2);
-    position: relative;
-    top: 10px;
-
-  // @media (min-width: 768px) {
-  //  font-size: 7.5vw;
-  // }
-
-  `;
-
-export const FirstName = styled.div`
-  display: flex;
-  flex-direction: column;
-  span.name {
-    display: inline-block;
-    ${MixinName}
-  }
-  span.trainer {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 2vw;
-    position: relative;
-    top: 1.3vw;
-    @media (min-width: 768px) {
-      max-width: 6.5vw;
-      margin-top: 16px;
-      font-size: 1vw;
-      line-height: 1vw;
-      top: 1vw;
-    }
-  }
-`;
-
-export const LastName = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  span.name {
-    display: inline-block;
-    ${MixinName}
-  }
-  span.trainer {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: right;
-    font-size: 2vw;
-    position: relative;
-    top: 1vw;
-    @media (min-width: 768px) {
-      max-width: 7.5vw;
-      font-size: 1vw;
-      line-height: 1vw;
-      top: 1vw;
-    }
-  }
-`;
-
-export const WrapperText = styled.div`
-  display: flex;
-  gap: 4vw;
-  padding-top: 2.6vw;
-  justify-content: space-between;
-  position: relative;
-
-  @media (min-width: 768px) {
-    justify-content: normal;
-    position: relative;
-    z-index: 1;
-  }
-`;
-
-export const DescriptionName = styled.h1`
-  font-size: 1vw;
-  text-align: justify;
-  text-transform: uppercase;
-  line-height: 1.3vw;
-  font-weight: normal;
-  margin-top: 0;
-
-  @media (max-width: 768px) {
-    position: absolute;
-    bottom: -15vw;
-    width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2.5vw;
-    line-height: 3vw;
-  }
-`;
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const CircleText = styled.div`
-  height: 135px;
-  width: 135px;
-
-  background: url("/Text.png") no-repeat center bottom;
-  background-size: contain;
-  animation: ${rotate} 10s linear infinite;
-
-  @media (min-width: 768px) {
-    width: 11.6vw;
-    height: 11.6vw;
-  }
-`;
-
-export const WrapperCircle = styled.div`
-  position: relative;
-
-  a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-12px, -17px);
-  }
-`;
-
-export const Block = styled.div`
-  height: 390px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  max-width: 95%;
-  margin: 0 auto;
-  background: linear-gradient(
-    180deg,
-    rgba(247, 164, 26, 1) 48%,
-    rgba(242, 225, 8, 1) 98%
-  );
-  border-radius: 21vw;
-  &:before {
-    content: "";
-    position: absolute;
-    background: url("/Photo.png") no-repeat center bottom;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    height: 38vw;
-    background: linear-gradient(
-      180deg,
-      rgba(247, 164, 26, 1) 48%,
-      rgba(242, 225, 8, 1) 98%
-    );
-    border-radius: 22vw;
-    position: relative;
-    top: -5.5vw;
-    //z-index: -1;
-
-    &:before {
-      content: "";
-      width: 34.3vw;
-      background-size: contain;
-      height: 35vw;
-    }
-  }
-`;
-
 export const Elements = styled.div`
   display: flex;
   gap: 1.5vw;
@@ -204,17 +32,13 @@ export const Elements = styled.div`
     text-decoration: none;
     color: white;
     transition: all 0.3s;
+    font-size: 0.9vw;
     &:hover {
       color: rgba(255, 190, 11, 1);
     }
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  @media (max-width: 1200px) {
-    font-size: 1.8vw;
+    @media (max-width: 1023px) {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -229,95 +53,118 @@ export const FullName = styled.div`
     }
   }
   @media (max-width: 768px) {
-    font-size: 3.8vw;
+    display: none;
   }
   @media (min-width: 768px) {
     font-size: 0.9vw;
   }
 `;
 
-export const Links = styled.div`
+export const StyledElement = styled.div`
   display: flex;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    gap: 4.5vw;
-  }
-  @media (min-width: 768px) {
-    gap: 1.5vw;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s;
-    &:hover {
-      color: rgba(255, 190, 11, 1);
-    }
-  }
-  @media (max-width: 1200px) {
-    font-size: 1.8vw;
-  }
-
-  & div.email {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-`;
-
-export const BlockWrapper = styled.div`
-  padding-top: 20vw;
-  @media (min-width: 768px) {
-    max-width: 89.5vw;
-    margin: 0 auto;
-    padding-top: 0;
-  }
-`;
-
-export const ButtonConsult = styled.button`
-  background: rgba(255, 190, 11, 1);
-  border-radius: 10px;
-  border: none;
-  height: 80px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-family: Inter, sans-serif;
-  padding: 0 50px;
-  margin: 0 auto;
-  text-transform: uppercase;
+  flex-direction: column;
+  padding-left: 5.4vw;
   position: relative;
-  top: -3vw;
-  color: black;
-  cursor: pointer;
-  transition: all 0.3s;
-  &:hover {
-    background: gray;
-  }
 
-  @media (max-width: 768px) {
-    margin-top: 20px;
-    font-size: 16px;
-    height: 60px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
   &:before {
     content: "";
-    width: 51px;
-    height: 32px;
-    background: url("/Elements.png") no-repeat center;
+    background-image: url("/ConsultIconArrow.png");
     background-size: contain;
+    background-position: center;
+    width: 4.4vw;
+    height: 2.8vw;
+    position: absolute;
+    left: 0;
   }
-  &:after {
-    content: "";
-    width: 51px;
-    height: 32px;
-    background: url("/Elements.png") no-repeat center;
-    background-size: contain;
-    transform: rotate(180deg);
+
+  @media (max-width: 1023px) {
+    font-size: 3vw;
   }
+`;
+
+export const StyledTitle = styled.h2`
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 3.1vw;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 2.7vw;
+
+  & span {
+    color: #ffbe0b;
+  }
+
+  @media (max-width: 1023px) {
+    line-height: 5vw;
+    font-size: 5.1vw;
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 33.5vw;
+  padding: 100px 0;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    padding: 20px 0;
+  }
+`;
+
+export const StyledBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5.7vw;
+  padding-top: 5vw;
+`;
+
+export const StyledPhotoBlock = styled.div`
+  & .photo {
+    width: 33.5vw;
+    height: 33.5vw;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 1023px) {
+      width: 90vw;
+      height: 90vw;
+      margin-top: 15px;
+    }
+  }
+`;
+
+export const StyledName = styled.div`
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 5.1vw;
+  text-align: center;
+  line-height: 5vw;
+
+  @media (max-width: 1023px) {
+    font-size: 15vw;
+    margin-bottom: 10px;
+  }
+`;
+
+export const StyledDescription = styled.div`
+  font-size: 1vw;
+  text-align: center;
+  text-transform: uppercase;
+  width: 18vw;
+  margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    font-size: 3vw;
+  }
+`;
+
+export const Arrow = styled.div`
+  background-image: url("/Arrow.svg");
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  left: 49%;
+  top: 49%;
+  z-index: 1;
 `;

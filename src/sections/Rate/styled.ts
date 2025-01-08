@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 export const CardsWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
   }
 `;
 export const CardWrapper = styled.div`
-  width: 50%;
   display: flex;
   min-height: 650px;
   background: #1d1d1d;
+  border-radius: 10px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -53,6 +54,17 @@ export const Card = styled.div`
     }
   }
 `;
+export const Price = styled.div`
+  margin-top: auto;
+  font-size: 1.5vw;
+  text-align: center;
+  padding-bottom: 2.5vw;
+  font-weight: bold;
+
+  @media (max-width: 1023px) {
+    font-size: 5vw;
+  }
+`;
 export const Type = styled.div`
   width: 160px;
   background: #333333;
@@ -77,23 +89,31 @@ export const Type = styled.div`
   }
 `;
 export const CardTitle = styled.h3`
-  font-size: 40px;
-  margin-bottom: -10px;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0;
 
   @media (max-width: 768px) {
     font-size: 22px;
-    margin: 0;
   }
 `;
 export const CardDescription = styled.div`
+  color: gray;
+  text-align: center;
+  max-width: 19vw;
+  margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    max-width: 100%;
+  }
   @media (max-width: 768px) {
     font-size: 12px;
   }
 `;
 export const CardFooter = styled.div`
-  height: 85px;
+  //height: 85px;
   display: flex;
-  margin-top: auto;
+  //margin-top: auto;
 
   @media (max-width: 1280px) {
     flex-direction: column-reverse;
@@ -104,32 +124,28 @@ export const CardFooter = styled.div`
   }
 
   & button {
-    height: 100%;
-    width: 50%;
+    min-height: 4.5vw;
+    width: 100%;
     text-transform: uppercase;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: 1.1vw;
-    @media (max-width: 1280px) {
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      font-size: 20px;
-      padding: 25px;
-    }
   }
-  & button:first-child {
+  & button {
     background: rgba(255, 190, 11, 1);
     color: rgba(20, 20, 20, 1);
     font-family: Inter, sans-serif;
     font-weight: bold;
-    border-radius: 0 0 0 10px;
+    border-radius: 0 0 10px 10px;
     cursor: pointer;
-
     transition: all 0.3s;
+
+    @media (max-width: 1023px) {
+      font-size: 3vw;
+      height: 60px;
+    }
     &:hover {
       background: gray;
     }
@@ -161,20 +177,6 @@ export const CardFooter = styled.div`
         width: 30px;
         height: 19px;
       }
-    }
-  }
-  & button:last-child {
-    background: transparent;
-    color: white;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.5vw;
-
-    @media (max-width: 1280px) {
-      font-size: 20px;
-      border: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 `;

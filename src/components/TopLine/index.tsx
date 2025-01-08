@@ -2,16 +2,72 @@ import {
   Elements,
   FullName,
   Line,
-  Links,
   Wrapper,
 } from "../../sections/Header/styled.ts";
-import IconTelegram from "../../../public/telegram.svg";
-import IconInstagram from "../../../public/insta.svg";
 import { Container } from "../../styled.root.ts";
+import styled from "styled-components";
 
+export const ButtonConsult = styled.button`
+  background: rgba(255, 190, 11, 1);
+  border-radius: 10px;
+  border: none;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1vw;
+  font-weight: bold;
+  font-family: Inter, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: gray;
+  }
+
+  @media (max-width: 1023px) {
+    font-size: 16px;
+    white-space: nowrap;
+    margin: 20px 10px 20px 10px;
+    padding: 0 5px;
+  }
+  &:before {
+    content: "";
+    width: 51px;
+    height: 32px;
+    background: url("/Elements.png") no-repeat center;
+    background-size: contain;
+    @media (max-width: 1023px) {
+      width: 30px;
+      height: 19px;
+    }
+  }
+  &:after {
+    content: "";
+    width: 51px;
+    height: 32px;
+    background: url("/Elements.png") no-repeat center;
+    background-size: contain;
+    transform: rotate(180deg);
+    @media (max-width: 1023px) {
+      width: 30px;
+      height: 19px;
+    }
+  }
+`;
+
+export const StyledTopLine = styled.div`
+  background: #1e1e1e;
+`;
 const TopLine = () => {
+  const handleClick = () => {
+    alert("handleClick");
+  };
   return (
-    <div>
+    <StyledTopLine>
       <Container>
         <div>
           <Wrapper>
@@ -23,29 +79,14 @@ const TopLine = () => {
               <a href="/#faq">FAQ</a>
               <a href="/">Отзывы</a>
             </Elements>
-
-            <Links>
-              <div className="email">
-                <a target="_blank" href="mailto: zaitsevdmitri96@gmail.com">
-                  zaitsevdmitri96@gmail.com
-                </a>
-              </div>
-              <div>
-                <a href="https://t.me/TrainerDima" target="_blank">
-                  <img src={IconTelegram} alt="telegram" />
-                </a>
-              </div>
-              <div>
-                <a href="https://www.instagram.com/dim.zaitsev" target="_blank">
-                  <img src={IconInstagram} alt="instagram" />
-                </a>
-              </div>
-            </Links>
+            <ButtonConsult onClick={handleClick}>
+              Бесплатная консультация
+            </ButtonConsult>
           </Wrapper>
           <Line />
         </div>
       </Container>
-    </div>
+    </StyledTopLine>
   );
 };
 

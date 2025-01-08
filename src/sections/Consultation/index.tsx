@@ -1,43 +1,43 @@
 import { Container } from "../../styled.root.ts";
 import {
   Section,
-  Image,
-  Button,
-  Title,
-  WrapperTitle,
-  Description,
-  DescriptionWrap,
-  Block,
-  MobileButton,
+  Grid,
+  Content,
+  StyledWrapperForm,
+  StyledTitle,
+  StyledContacts,
+  StyledHeaderForm,
 } from "./styled.ts";
-import { useModal } from "../../hooks/useModal.ts";
 
 const Consultation = () => {
-  const { openModal } = useModal();
+  // const { openModal } = useModal();
   return (
     <Section>
       <Container>
-        <div>
-          <Block>
-            <Image src="/ConsultIconArrow.png" alt="arrow" />
-            <DescriptionWrap>
-              <Description>
-                Я внимательно работаю с клиентами, предлагая индивидуальные
-                программы тренировок, соответствующие их физическим возможностям
-                и целям. Я понимаю, что у каждого свои цели и ритм жизни,
-                поэтому адаптирую программы так, чтобы вы чувствовали себя
-                комфортно и могли без давления достигать результатов. Сделайте
-                шаг к своей идеальной фигуре!
-              </Description>
-              <Button onClick={() => openModal()}>Консультация</Button>
-            </DescriptionWrap>
-          </Block>
-        </div>
-        <WrapperTitle>
-          <Title>Запись</Title>
-          <Title>на бесплатную консультацию</Title>
-        </WrapperTitle>
-        <MobileButton onClick={() => openModal()}>Консультация</MobileButton>
+        <Grid>
+          <div style={{ display: "flex", flexDirection: "column", gap: "3vw" }}>
+            <Content>
+              <h2>Бесплатная 15-минутная</h2>
+              <h2>консультация с тренером</h2>
+            </Content>
+            <StyledWrapperForm>
+              <StyledHeaderForm>
+                <StyledTitle>Где с вами удобнее связаться</StyledTitle>
+                <StyledContacts>
+                  <span>WatsApp</span> <span>Telegram</span>
+                </StyledContacts>
+              </StyledHeaderForm>
+
+              <form>
+                <input type="text" placeholder="Ваше имя" />
+                <input type="text" placeholder="Номер телефона (начиная с +)" />
+              </form>
+            </StyledWrapperForm>
+          </div>
+          <div>
+            <img src="../../../public/photo-second.png" alt="image" />
+          </div>
+        </Grid>
       </Container>
     </Section>
   );

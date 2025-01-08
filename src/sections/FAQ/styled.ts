@@ -18,7 +18,7 @@ export const PlusBtn = styled.div`
   padding-right: 10px;
 `;
 
-export const WrapperLine = styled.div<{ isActive: boolean }>`
+export const WrapperLine = styled.div`
   display: flex;
   align-items: center;
   padding: 15px 0;
@@ -36,16 +36,16 @@ export const TitleLine = styled.div`
   }
 `;
 
-export const Description = styled.div<{ isshow: boolean }>`
+export const Description = styled.div<{ $isShow: boolean }>`
   overflow: hidden;
-  max-height: ${(props) => (props.isshow ? "1000px" : "0")};
-  opacity: ${(props) => (props.isshow ? "1" : "0")};
+  max-height: ${({ $isShow }) => ($isShow ? "1000px" : "0")};
+  opacity: ${({ $isShow }) => ($isShow ? "1" : "0")};
   transition:
     max-height 0.3s ease,
     opacity 0.3s ease;
   padding-left: calc(30% + 25px);
   max-width: 500px;
-  padding-bottom: ${(props) => (props.isshow ? "15px" : "0")};
+  padding-bottom: ${({ $isShow }) => ($isShow ? "15px" : "0")};
   line-height: 20px;
 
   @media (max-width: 1280px) {
@@ -54,9 +54,9 @@ export const Description = styled.div<{ isshow: boolean }>`
   }
 `;
 
-export const MainLine = styled.div<{ isActive: boolean }>`
+export const MainLine = styled.div<{ $isActive: boolean }>`
   transition: all 0.3s;
-  background: ${({ isActive }) =>
-    isActive ? "rgba(255, 190, 11, 1)" : "transparent"};
-  color: ${({ isActive }) => (isActive ? "rgba(20, 20, 20, 1)" : "white")};
+  background: ${({ $isActive }) =>
+    $isActive ? "rgba(255, 190, 11, 1)" : "transparent"};
+  color: ${({ $isActive }) => ($isActive ? "rgba(20, 20, 20, 1)" : "white")};
 `;

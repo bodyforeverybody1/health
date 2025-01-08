@@ -65,7 +65,7 @@ ${textArea}
   };
   return (
     <ModalStyles
-      isopen={isOpen ? "true" : "false"}
+      $isOpen={isOpen ? "true" : "false"}
       onClick={() => closeModal()}
     >
       <ModalContentStyles onClick={(e) => e.stopPropagation()}>
