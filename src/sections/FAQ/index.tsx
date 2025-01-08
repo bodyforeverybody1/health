@@ -20,14 +20,14 @@ const Faq = () => {
     }
   };
   return (
-    <section id="faq">
+    <section id="faq" style={{ marginBottom: "5vw" }}>
       <Container>
-        <RootTitle>FAQ</RootTitle>
+        <RootTitle>Часто задаваемые вопросы</RootTitle>
         <div style={{ borderBottom: "1px solid rgba(90, 90, 90, 1)" }}>
           {FAQ.map((el: IFaq, index) => {
             return (
-              <MainLine key={el.title} isActive={activeIndex === index}>
-                <WrapperLine isActive={activeIndex === index}>
+              <MainLine key={el.title} $isActive={activeIndex === index}>
+                <WrapperLine>
                   <Number>/{index + 1}</Number>
                   <TitleLine>{el.title}</TitleLine>
                   <PlusBtn onClick={() => handleOpen(index)}>
@@ -35,7 +35,7 @@ const Faq = () => {
                   </PlusBtn>
                 </WrapperLine>
 
-                <Description isshow={activeIndex === index}>
+                <Description $isShow={activeIndex === index}>
                   {el.description}
                 </Description>
               </MainLine>

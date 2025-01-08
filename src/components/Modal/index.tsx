@@ -3,22 +3,30 @@ import {
   ModalStyles,
   ModalContentStyles,
   CloseBtn,
-  FieldSet,
+  StyledConnect,
+  StyledSubDescription,
+  StyledUl,
+  Span,
 } from "./styled.ts";
 import { useState } from "react";
 import { getDate } from "../../helper";
 import { useNavigate } from "react-router-dom";
 import { token } from "../../consts";
 
+type ContactType = { [key: string]: boolean };
+
+const initContact: ContactType = {
+  WatsApp: false,
+  Telegram: false,
+};
+
 const Modal = () => {
   const [user, setUser] = useState<string>();
-  const [typeMessage, setTypeMessage] = useState<string>();
   const [phone, setPhone] = useState<string>();
-  const [isPolitic, setIsPolitic] = useState<boolean>();
-  const [isAge, setIsAge] = useState<boolean>();
-  const [textArea, setTextArea] = useState<string>();
   const [isShowSuggestion, _] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [contacts, setContacts] = useState<ContactType>(initContact);
 
   const { closeModal, isOpen, type } = useModal();
   const navigate = useNavigate();
@@ -28,15 +36,16 @@ const Modal = () => {
 
     try {
       const obj = {
-        // chat_id: "518174528", // home
-        chat_id: "-4545168563", // work
+        chat_id: "518174528", // home
+        // chat_id: "-4545168563", // work
         text: `
 📆 ${getDate()}
-${type === "Базовый" ? "Базовый" : type === "Полный" ? "Полный" : "Консультация"}
+${type}
 👨‍🦰Имя: ${user}
-💻Мессенджер: ${typeMessage}
+💻Мессенджер: 
+${contacts.WatsApp ? "WatsApp" : ""}
+${contacts.Telegram ? "Telegram" : ""}
 📞Телефон: ${phone}
-${textArea}
 
 `,
       };
@@ -51,21 +60,24 @@ ${textArea}
 
       setLoading(false);
       closeModal();
+      setContacts(initContact);
+      setUser("");
+      setPhone("");
       navigate("/thanks");
     } catch (err) {
       console.error(err);
     }
   };
 
-  const handlePoliticChange = (value: any) => {
-    setIsPolitic(value.target.checked);
-  };
-  const handleAgeChange = (value: any) => {
-    setIsAge(value.target.checked);
+  const handleClick = (value: string) => {
+    setContacts((prevState) => ({
+      ...prevState,
+      [value]: !contacts[value],
+    }));
   };
   return (
     <ModalStyles
-      isopen={isOpen ? "true" : "false"}
+      $isOpen={isOpen ? "true" : "false"}
       onClick={() => closeModal()}
     >
       <ModalContentStyles onClick={(e) => e.stopPropagation()}>
@@ -79,8 +91,16 @@ ${textArea}
           </div>
         ) : (
           <>
-            <h2>Оставьте заявку</h2>
-            <p>и я свяжусь с вами в ближайшее время</p>
+            <h2>Попробуйте бесплатную тренировку</h2>
+            <p>с онлайн тренером!</p>
+            <StyledSubDescription>
+              Оставьте свои контакты, чтобы:
+            </StyledSubDescription>
+            <StyledUl>
+              <li>Испытать персональный подход к тренировкам</li>
+              <li>Получить оценку вашего уровня подготовки</li>
+              <li>Начать путь к своим фитнес-целям прямо сейчас</li>
+            </StyledUl>
             <form onSubmit={sendOrder}>
               <input
                 placeholder="Ваше имя"
@@ -94,51 +114,24 @@ ${textArea}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
-              <input
-                required
-                placeholder="Ник телеграм (начиная с @)"
-                value={typeMessage}
-                onChange={(e) => setTypeMessage(e.target.value)}
-              />
-              <textarea
-                style={{ marginBottom: 20 }}
-                required
-                placeholder="Напишите сообщение... "
-                value={textArea}
-                onChange={(e) => setTextArea(e.target.value)}
-              />
-              <FieldSet>
-                <label>
-                  <input
-                    required
-                    type="checkbox"
-                    checked={isPolitic}
-                    onChange={handlePoliticChange}
-                  />
-                  <div>
-                    Выражаю{" "}
-                    <a href="/approve.pdf" target="_blank">
-                      согласие на обработку моих персональных данных
-                    </a>{" "}
-                    в соответствии с{" "}
-                    <a href="/polity.pdf" target="_blank">
-                      Политикой защиты персональных данных.
-                    </a>
-                  </div>
-                </label>
-              </FieldSet>
+              <StyledSubDescription>
+                Где с вами удобнее связаться
+              </StyledSubDescription>
+              <StyledConnect>
+                <Span
+                  $active={contacts["WatsApp"]}
+                  onClick={() => handleClick("WatsApp")}
+                >
+                  WatsApp
+                </Span>
+                <Span
+                  $active={contacts["Telegram"]}
+                  onClick={() => handleClick("Telegram")}
+                >
+                  Telegram
+                </Span>
+              </StyledConnect>
 
-              <FieldSet>
-                <label>
-                  <input
-                    required
-                    type="checkbox"
-                    checked={isAge}
-                    onChange={handleAgeChange}
-                  />
-                  <div>Мне уже есть 18 лет.</div>
-                </label>
-              </FieldSet>
               <button type="submit">Отправить</button>
             </form>
           </>

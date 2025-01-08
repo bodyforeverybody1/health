@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const Section = styled.div`
   background: rgba(29, 29, 29, 1);
-  padding: 80px 0 0;
+  padding: 80px 0;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 
   @media (max-width: 768px) {
     padding: 30px 0;
@@ -104,5 +108,71 @@ export const MobileButton = styled.button`
   color: black;
   @media (min-width: 768px) {
     display: none;
+  }
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 22vw;
+
+  gap: 5vw;
+
+  & img {
+    width: 100%;
+  }
+`;
+
+export const StyledHeaderForm = styled.div``;
+
+export const Content = styled.div`
+  h2 {
+    margin: 0;
+    font-size: 6.8vw;
+    font-family: "BebasNeueBold", sans-serif;
+    line-height: 6vw;
+  }
+`;
+
+export const StyledWrapperForm = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    & input {
+      padding: 0 10px;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid #5a5a5a;
+      background: rgba(29, 29, 29, 1);
+      height: 58px;
+    }
+  }
+`;
+
+export const StyledTitle = styled.h3`
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1vw;
+  font-weight: 400;
+`;
+
+export const StyledContacts = styled.div`
+  padding-top: 4vw;
+  display: flex;
+  gap: 2vw;
+  & span {
+    background: gray;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background: black;
+    }
   }
 `;
