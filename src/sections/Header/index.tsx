@@ -67,7 +67,13 @@ const Header = () => {
               </video>
             </div>
             <div className="mobile">
-              <video ref={videoRef} width="100%" height="100%" controls>
+              <video
+                ref={videoRef}
+                width="100%"
+                height="100%"
+                controls
+                poster="/placeholderVideo.png"
+              >
                 <source src="/video/video2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
