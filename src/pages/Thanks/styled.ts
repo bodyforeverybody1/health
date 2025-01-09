@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   text-align: center;
+  padding-top: 80px;
   & h2 {
     color: rgba(255, 190, 11, 1);
     font-size: 40px;
