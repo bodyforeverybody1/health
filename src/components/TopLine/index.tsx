@@ -83,7 +83,7 @@ const TopLine = () => {
               <a href="/">ДМИТРИЙ ЗАЙЦЕВ</a>
             </FullName>
             <Elements>
-              <a href="/">Результаты</a>
+              <a href="/#result">Результаты</a>
               <a href="/#faq">FAQ</a>
               <a href="/#about-me">Обо мне</a>
             </Elements>
