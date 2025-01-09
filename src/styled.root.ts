@@ -25,6 +25,7 @@ export const RootTitle = styled.h2`
   text-align: center;
   @media (max-width: 1280px) {
     font-size: 30px;
+    margin-bottom: 10vw;
   }
 `;
 
@@ -37,5 +38,6 @@ export const StyledTitle = styled.h2`
 
   @media (max-width: 1023px) {
     font-size: 7.6vw;
+    margin: 15vw 0;
   }
 `;

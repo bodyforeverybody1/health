@@ -38,6 +38,7 @@ const StyledWrapperText = styled.div`
   @media (max-width: 1023px) {
     max-width: 100%;
     font-size: 5vw;
+    gap: 5vw;
   }
 
   p {

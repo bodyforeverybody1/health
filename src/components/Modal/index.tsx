@@ -36,8 +36,8 @@ const Modal = () => {
 
     try {
       const obj = {
-        // chat_id: "518174528", // home
-        chat_id: "-4545168563", // work
+        chat_id: "518174528", // home
+        // chat_id: "-4545168563", // work
         text: `
 📆 ${getDate()}
 ${type}

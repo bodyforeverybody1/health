@@ -27,12 +27,10 @@ const Faq = () => {
           {FAQ.map((el: IFaq, index) => {
             return (
               <MainLine key={el.title} $isActive={activeIndex === index}>
-                <WrapperLine>
+                <WrapperLine onClick={() => handleOpen(index)}>
                   <Number>/{index + 1}</Number>
                   <TitleLine>{el.title}</TitleLine>
-                  <PlusBtn onClick={() => handleOpen(index)}>
-                    {activeIndex === index ? "-" : "+"}
-                  </PlusBtn>
+                  <PlusBtn>{activeIndex === index ? "-" : "+"}</PlusBtn>
                 </WrapperLine>
 
                 <Description $isShow={activeIndex === index}>

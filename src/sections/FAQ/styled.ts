@@ -23,6 +23,7 @@ export const WrapperLine = styled.div`
   align-items: center;
   padding: 15px 0;
   border-top: 1px solid rgba(90, 90, 90, 1);
+  cursor: pointer;
 `;
 
 export const TitleLine = styled.div`
