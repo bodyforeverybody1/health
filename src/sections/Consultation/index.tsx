@@ -13,6 +13,7 @@ import { token } from "../../consts";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Span } from "../../components/Modal/styled.ts";
+import Photo from "../../../public/photo-second.png";
 
 const Consultation = () => {
   const navigate = useNavigate();
@@ -77,11 +78,7 @@ ${contacts.Telegram ? "Telegram" : ""}
               <h2>Бесплатная 15-минутная</h2>
               <h2>консультация с тренером</h2>
             </Content>
-            <img
-              className="mobile"
-              src="/public/photo-second.png"
-              alt="image"
-            />
+            <img className="mobile" src={Photo} alt="image" />
             <StyledWrapperForm>
               <StyledHeaderForm>
                 <StyledTitle>Где с вами удобнее связаться</StyledTitle>
@@ -121,7 +118,7 @@ ${contacts.Telegram ? "Telegram" : ""}
             </StyledWrapperForm>
           </div>
           <div>
-            <img src="/public/photo-second.png" alt="image" />
+            <img src={Photo} alt="image" />
           </div>
         </Grid>
       </Container>
