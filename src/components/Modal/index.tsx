@@ -9,16 +9,9 @@ import {
   Span,
 } from "./styled.ts";
 import { useState } from "react";
-import { getDate } from "../../helper";
+import { ContactType, getDate, initContact } from "../../helper";
 import { useNavigate } from "react-router-dom";
 import { token } from "../../consts";
-
-type ContactType = { [key: string]: boolean };
-
-const initContact: ContactType = {
-  WatsApp: false,
-  Telegram: false,
-};
 
 const Modal = () => {
   const [user, setUser] = useState<string>();
