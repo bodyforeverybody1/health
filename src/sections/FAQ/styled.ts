@@ -61,3 +61,11 @@ export const MainLine = styled.div<{ $isActive: boolean }>`
     $isActive ? "rgba(255, 190, 11, 1)" : "transparent"};
   color: ${({ $isActive }) => ($isActive ? "rgba(20, 20, 20, 1)" : "white")};
 `;
+
+export const Section = styled.section`
+  margin-bottom: 5vw;
+
+  @media (max-width: 1023px) {
+    padding-top: 30px;
+  }
+`;

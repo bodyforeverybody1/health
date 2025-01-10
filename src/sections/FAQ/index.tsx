@@ -6,6 +6,7 @@ import {
   TitleLine,
   Description,
   MainLine,
+  Section,
 } from "./styled.ts";
 import { FAQ, IFaq } from "../../consts";
 import { useState } from "react";
@@ -20,7 +21,7 @@ const Faq = () => {
     }
   };
   return (
-    <section id="faq" style={{ marginBottom: "5vw" }}>
+    <Section id="faq">
       <Container>
         <RootTitle>Часто задаваемые вопросы</RootTitle>
         <div style={{ borderBottom: "1px solid rgba(90, 90, 90, 1)" }}>
@@ -41,7 +42,7 @@ const Faq = () => {
           })}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };
 

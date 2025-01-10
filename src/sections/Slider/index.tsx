@@ -43,6 +43,15 @@ export const Slider = () => {
         <SwiperSlide style={{ overflow: "hidden" }}>
           <ReactPlayer url="https://youtube.com/shorts/VuUqz0cCS8Y" />
         </SwiperSlide>
+        <SwiperSlide style={{ overflow: "hidden" }}>
+          <ReactPlayer url="https://youtube.com/shorts/zeOi4PBeYgE" />
+        </SwiperSlide>
+        <SwiperSlide style={{ overflow: "hidden" }}>
+          <ReactPlayer url="https://youtube.com/shorts/7QYDA8LlYEc" />
+        </SwiperSlide>
+        <SwiperSlide style={{ overflow: "hidden" }}>
+          <ReactPlayer url="https://youtube.com/shorts/jSHKYNE6BCI" />
+        </SwiperSlide>
       </Swiper>
     </section>
   );
