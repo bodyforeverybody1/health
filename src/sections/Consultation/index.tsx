@@ -79,7 +79,7 @@ ${contacts.Telegram ? "Telegram" : ""}
             </Content>
             <img
               className="mobile"
-              src="../../../public/photo-second.png"
+              src="/public/photo-second.png"
               alt="image"
             />
             <StyledWrapperForm>
@@ -121,7 +121,7 @@ ${contacts.Telegram ? "Telegram" : ""}
             </StyledWrapperForm>
           </div>
           <div>
-            <img src="../../../public/photo-second.png" alt="image" />
+            <img src="/public/photo-second.png" alt="image" />
           </div>
         </Grid>
       </Container>
