@@ -115,7 +115,7 @@ ${contacts.Telegram ? "Telegram" : ""}
                   $active={contacts["WatsApp"]}
                   onClick={() => handleClick("WatsApp")}
                 >
-                  WatsApp
+                  WhatsApp
                 </Span>
                 <Span
                   $active={contacts["Telegram"]}

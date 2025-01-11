@@ -130,7 +130,7 @@ export const StyledPhotoBlock = styled.div`
   & .photo {
     width: 33.5vw;
     height: 33.5vw;
-    border-radius: 50%;
+    //border-radius: 50%;
     margin-bottom: 40px;
     overflow: hidden;
     position: relative;

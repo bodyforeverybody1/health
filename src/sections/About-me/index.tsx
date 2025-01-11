@@ -90,7 +90,7 @@ export const AboutMe = () => {
           <StyledWrapperInfo>
             <StyledWrapperText>
               <p>
-                Персональный фитнес тренер с опытом работы <span>7 лет.</span>
+                Персональный фитнес-тренер с опытом работы <span>7 лет.</span>
               </p>
               <p>
                 С моей помощью <span>свыше 100 человек</span> обрели фигуру
