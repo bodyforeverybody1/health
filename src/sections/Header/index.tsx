@@ -13,32 +13,10 @@ import { useRef, useState } from "react";
 
 const Header = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isPause, setIsPause] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-
-  const handleClick = () => {
-    if (videoRef.current && !isLoading) {
-      if (isPause) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-      setIsPause(!isPause);
-    }
-  };
 
   const handleLoadedData = () => {
     setIsLoading(false);
-    videoRef.current?.pause(); // Убедимся, что видео на паузе при загрузке
-    setIsPause(true);
-  };
-
-  const handlePlay = () => {
-    setIsPause(false); // Синхронизация состояния с началом воспроизведения
-  };
-
-  const handlePause = () => {
-    setIsPause(true); // Синхронизация состояния с паузой
   };
 
   return (
@@ -68,24 +46,13 @@ const Header = () => {
             </StyledElement>
           </StyledBlock>
           <StyledPhotoBlock>
-            <div
-              className={`photo ${isLoading ? "loading" : ""}`}
-              onClick={handleClick}
-              style={{
-                position: "relative",
-                cursor: isLoading ? "not-allowed" : "pointer",
-                opacity: isLoading ? 0.5 : 1,
-              }}
-            >
+            <div className={`photo ${isLoading ? "loading" : ""}`}>
               {isLoading && <p>Загрузка видео...</p>}
               <video
                 ref={videoRef}
                 onLoadedData={handleLoadedData}
-                // style={{ transform: "scale(1.8)", zIndex: 1 }}
                 width="100%"
                 height="100%"
-                onPlay={handlePlay} // Событие при воспроизведении
-                onPause={handlePause} // Событие при паузе
                 controls
               >
                 <source src="/video/video.mp4" type="video/mp4" />
