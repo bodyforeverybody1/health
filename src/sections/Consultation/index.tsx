@@ -12,11 +12,14 @@ import { ContactType, getDate, initContact } from "../../helper";
 import { token } from "../../consts";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Span } from "../../components/Modal/styled.ts";
+import { Span, WrapperPhone } from "../../components/Modal/styled.ts";
 import Photo from "../../../public/photo-second.png";
+import { PhoneComponent } from "./phone.tsx";
 
 const Consultation = () => {
   const navigate = useNavigate();
+  const [phone, setPhone] = useState<string>();
+  const [isValid, setIsValid] = useState(false);
 
   const [values, setValues] = useState({
     name: "",
@@ -39,7 +42,7 @@ const Consultation = () => {
 💻Мессенджер: 
 ${contacts.WatsApp ? "WatsApp" : ""}
 ${contacts.Telegram ? "Telegram" : ""}
-📞Телефон: ${values.phone}
+📞Телефон: ${phone}
 
 `,
       };
@@ -69,6 +72,11 @@ ${contacts.Telegram ? "Telegram" : ""}
     }));
   };
 
+  const handleCb = (phone: string, isValid: boolean) => {
+    setPhone(phone);
+    setIsValid(isValid);
+  };
+
   return (
     <Section>
       <Container>
@@ -78,7 +86,8 @@ ${contacts.Telegram ? "Telegram" : ""}
               <h2>Бесплатная 15-минутная</h2>
               <h2>консультация с тренером</h2>
             </Content>
-            <img className="mobile" src={Photo} alt="image" />
+            <img className="img mobile" src={Photo} alt="image" />
+
             <StyledWrapperForm>
               <StyledHeaderForm>
                 <StyledTitle>Где с вами удобнее связаться</StyledTitle>
@@ -88,7 +97,7 @@ ${contacts.Telegram ? "Telegram" : ""}
                     onClick={() => handleClick("WatsApp")}
                   >
                     WhatsApp
-                  </Span>{" "}
+                  </Span>
                   <Span
                     $active={contacts["Telegram"]}
                     onClick={() => handleClick("Telegram")}
@@ -106,19 +115,22 @@ ${contacts.Telegram ? "Telegram" : ""}
                   value={values.name}
                   onChange={handleChange}
                 />
-                <input
-                  required
-                  placeholder="Номер телефона (начиная с +)"
-                  name="phone"
-                  value={values.phone}
-                  onChange={handleChange}
-                />
-                <button type="submit">Отправить</button>
+
+                <WrapperPhone>
+                  <PhoneComponent cb={handleCb} />
+                </WrapperPhone>
+
+                {!isValid && (
+                  <div style={{ color: "red" }}>Phone is not valid</div>
+                )}
+                <button className="btn" disabled={!isValid} type="submit">
+                  Отправить
+                </button>
               </form>
             </StyledWrapperForm>
           </div>
           <div>
-            <img src={Photo} alt="image" />
+            <img className="img" src={Photo} alt="image" />
           </div>
         </Grid>
       </Container>

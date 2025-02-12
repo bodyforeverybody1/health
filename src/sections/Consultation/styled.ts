@@ -116,7 +116,7 @@ export const Grid = styled.div`
   @media (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
-  & img {
+  & img.img {
     width: 100%;
     @media (max-width: 1023px) {
       display: none;
@@ -172,7 +172,7 @@ export const StyledWrapperForm = styled.div`
       height: 58px;
     }
 
-    & button {
+    & button.btn {
       background: rgba(255, 190, 11, 1);
       padding: 20px;
       border-radius: 10px;

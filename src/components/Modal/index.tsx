@@ -7,17 +7,20 @@ import {
   StyledSubDescription,
   StyledUl,
   Span,
+  WrapperPhone,
 } from "./styled.ts";
 import { useState } from "react";
 import { ContactType, getDate, initContact } from "../../helper";
 import { useNavigate } from "react-router-dom";
 import { token } from "../../consts";
+import { PhoneComponent } from "../../sections/Consultation/phone.tsx";
 
 const Modal = () => {
   const [user, setUser] = useState<string>();
   const [phone, setPhone] = useState<string>();
   const [isShowSuggestion, _] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isValid, setIsValid] = useState(false);
 
   const [contacts, setContacts] = useState<ContactType>(initContact);
 
@@ -29,8 +32,8 @@ const Modal = () => {
 
     try {
       const obj = {
-        // chat_id: "518174528", // home
-        chat_id: "-4545168563", // work
+        chat_id: "518174528", // home
+        // chat_id: "-4545168563", // work
         text: `
 📆 ${getDate()}
 ${type}
@@ -68,6 +71,12 @@ ${contacts.Telegram ? "Telegram" : ""}
       [value]: !contacts[value],
     }));
   };
+
+  const handleCb = (phone: string, isValid: boolean) => {
+    setPhone(phone);
+    setIsValid(isValid);
+  };
+
   return (
     <ModalStyles
       $isOpen={isOpen ? "true" : "false"}
@@ -101,12 +110,13 @@ ${contacts.Telegram ? "Telegram" : ""}
                 value={user}
                 onChange={(e) => setUser(e.target.value)}
               />
-              <input
-                placeholder="Номер телефона (начиная с +)"
-                required
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+              <WrapperPhone>
+                <PhoneComponent cb={handleCb} />
+              </WrapperPhone>
+
+              {!isValid && (
+                <div style={{ color: "red" }}>Phone is not valid</div>
+              )}
               <StyledSubDescription>
                 Где с вами удобнее связаться
               </StyledSubDescription>
@@ -125,7 +135,9 @@ ${contacts.Telegram ? "Telegram" : ""}
                 </Span>
               </StyledConnect>
 
-              <button type="submit">Отправить</button>
+              <button disabled={!isValid} type="submit">
+                Отправить
+              </button>
             </form>
           </>
         )}

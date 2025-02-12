@@ -198,3 +198,12 @@ export const Span = styled.span<{ $active: boolean }>`
     padding: 10px 20px;
   }
 `;
+
+export const WrapperPhone = styled.div`
+  & button {
+    padding: 0;
+  }
+  & input {
+    width: 100%;
+  }
+`;
