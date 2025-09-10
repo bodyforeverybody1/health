@@ -14,6 +14,7 @@ import { ContactType, getDate, initContact } from "../../helper";
 import { useNavigate } from "react-router-dom";
 import { token } from "../../consts";
 import { PhoneComponent } from "../../sections/Consultation/phone.tsx";
+import { StyledButton } from "../../sections/Consultation/index.tsx";
 
 const Modal = () => {
   const [user, setUser] = useState<string>();
@@ -135,9 +136,9 @@ ${contacts.Telegram ? "Telegram" : ""}
                 </Span>
               </StyledConnect>
 
-              <button disabled={!isValid} type="submit">
+              <StyledButton disabled={!isValid} type="submit">
                 Отправить
-              </button>
+              </StyledButton>
             </form>
           </>
         )}

@@ -15,6 +15,50 @@ import { useNavigate } from "react-router-dom";
 import { Span, WrapperPhone } from "../../components/Modal/styled.ts";
 import Photo from "../../../public/photo-second.png";
 import { PhoneComponent } from "./phone.tsx";
+import styled from "styled-components";
+
+
+export const StyledButton = styled.button`
+  background: rgba(255, 190, 11, 1);
+  padding: 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
 
 const Consultation = () => {
   const navigate = useNavigate();
@@ -123,9 +167,9 @@ ${contacts.Telegram ? "Telegram" : ""}
                 {!isValid && (
                   <div style={{ color: "red" }}>Phone is not valid</div>
                 )}
-                <button className="btn" disabled={!isValid} type="submit">
+                <StyledButton className="btn" disabled={!isValid} type="submit">
                   Отправить
-                </button>
+                </StyledButton>
               </form>
             </StyledWrapperForm>
           </div>
