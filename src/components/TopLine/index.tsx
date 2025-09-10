@@ -34,6 +34,7 @@ position: relative;
       transparent
     );
     animation: shimmer 2s infinite;
+    pointer-events: none;
   }
 
   @keyframes shimmer {
