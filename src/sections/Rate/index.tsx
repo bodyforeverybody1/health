@@ -9,6 +9,7 @@ import {
   CardFooter,
 } from "./styled.ts";
 import { useModal } from "../../hooks/useModal.ts";
+import { StyledWrapperButton } from "../../components/TopLine/index.tsx";
 
 const Rate = () => {
   const { openModal } = useModal();
@@ -35,11 +36,13 @@ const Rate = () => {
                 </ul>
               </div>
               <Price>€180</Price>
+              <StyledWrapperButton>
               <CardFooter>
                 <button onClick={() => openModal("Первый шаг")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>
+              </StyledWrapperButton>
             </Card>
           </CardWrapper>
           <CardWrapper>
@@ -69,11 +72,13 @@ const Rate = () => {
                 </ul>
               </div>
               <Price>€350</Price>
+              <StyledWrapperButton>
               <CardFooter>
                 <button onClick={() => openModal("Прокачай себя")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>
+              </StyledWrapperButton>
             </Card>
           </CardWrapper>
           <CardWrapper>
@@ -110,11 +115,13 @@ const Rate = () => {
                 </ul>
               </div>
               <Price>€550</Price>
+              <StyledWrapperButton>
               <CardFooter>
                 <button onClick={() => openModal("Звёздный результат")}>
                   записаться на пробную тренировку
                 </button>
               </CardFooter>
+              </StyledWrapperButton>
             </Card>
           </CardWrapper>
         </CardsWrapper>

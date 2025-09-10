@@ -171,21 +171,6 @@ export const StyledWrapperForm = styled.div`
       background: rgba(29, 29, 29, 1);
       height: 58px;
     }
-
-    & button.btn {
-      background: rgba(255, 190, 11, 1);
-      padding: 20px;
-      border-radius: 10px;
-      text-transform: uppercase;
-      font-size: 22px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-
-      @media (max-width: 768px) {
-        font-size: 16px;
-      }
-    }
   }
 `;
 

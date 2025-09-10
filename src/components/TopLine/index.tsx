@@ -9,6 +9,41 @@ import styled from "styled-components";
 import { useModal } from "../../hooks/useModal.ts";
 import { useLocation } from "react-router-dom";
 
+
+export const StyledWrapperButton = styled.div`
+position: relative;
+  overflow: hidden;
+
+    @media (max-width: 1023px) {
+     margin: 20px 10px 20px 10px;
+    
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+`;
 export const ButtonConsult = styled.button`
   background: rgba(255, 190, 11, 1);
   border-radius: 10px;
@@ -33,7 +68,7 @@ export const ButtonConsult = styled.button`
   @media (max-width: 1023px) {
     font-size: 16px;
     white-space: nowrap;
-    margin: 20px 10px 20px 10px;
+    // margin: 20px 10px 20px 10px;
     padding: 0 5px;
   }
   &:before {
@@ -87,9 +122,11 @@ const TopLine = () => {
               <a href="/#faq">FAQ</a>
               <a href="/#about-me">Обо мне</a>
             </Elements>
+            <StyledWrapperButton>
             <ButtonConsult onClick={handleClick}>
               Бесплатная консультация
             </ButtonConsult>
+            </StyledWrapperButton>
           </Wrapper>
           <Line />
         </div>
