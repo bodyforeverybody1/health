@@ -114,6 +114,7 @@ export const CardFooter = styled.div`
   //height: 85px;
   display: flex;
   //margin-top: auto;
+  white-space: nowrap;
 
   @media (max-width: 1280px) {
     flex-direction: column-reverse;
