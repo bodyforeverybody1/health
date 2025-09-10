@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 export const StyledWrapperButton = styled.div`
 position: relative;
   overflow: hidden;
+  border-radius: 10px;
 
     @media (max-width: 1023px) {
      margin: 20px 10px 20px 10px;
